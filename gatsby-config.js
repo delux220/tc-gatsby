@@ -16,7 +16,9 @@ module.exports = {
     {
       resolve: "gatsby-source-strapi",
       options: {
-        apiURL: process.env.API_URL || "http://localhost:1337",
+        apiURL: process.env.DEPLOY_URL
+          ? "https://damp-spire-01530.herokuapp.com"
+          : "http://localhost:1337",
         collectionTypes: ["article", "category", "writer", "podcasts"],
         singleTypes: [`homepage`, `global`, `hero`],
         queryLimit: 1000,
