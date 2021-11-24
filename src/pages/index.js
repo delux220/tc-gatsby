@@ -25,19 +25,33 @@ const IndexPage = () => {
         </div>
           
       </div>
-      <div className="container mx-auto">
-        <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-4">
+      <div className="container mx-auto pb-20">
+        <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-3">
           {
             data.allStrapiPodcasts.edges.map((podcast, i) => <div className="p-5" key={`podcast-${i}`}>
                 <GatsbyImage image={podcast.node.Artwork.localFile.childImageSharp.gatsbyImageData} className="max-w-full"/>
                 <h3 className="text-white font-sans font-bold">{podcast.node.Title}</h3>
-                <p className="text-gray-400 font-sans">{podcast.node.Description}</p>
+                <p className="text-gray-400 font-sans text-sm mb-10">{podcast.node.Description}</p>
                 <a href={podcast.node.URL} target="_blank" className="bg-pink-600 text-white px-6 font-bold py-3 rounded-lg font-sans">Listen</a>
               </div>)
           }
 
         </div>
 
+      </div>
+      <div className="bg-black">
+      <div className="container mx-auto text-center py-20">
+        <h3 className="font-sans font-bold text-white">Join the Trash Talk Facebook Group</h3>
+        <p className="text-gray-400 mb-10">Add a description here</p>
+        <a href={`https://www.facebook.com/groups/90daypodcast`} target="_blank" className="bg-pink-600 text-white px-6 font-bold py-3 rounded-lg font-sans">Join the Group</a>
+      </div>
+      </div>
+      <div className="bg-pink-600">
+      <div className="container mx-auto text-center py-20">
+        <h3 className="font-sans font-bold text-white">Join our Patreon</h3>
+        <p className="text-pink-300 mb-10">Add a description here</p>
+        <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="bg-white text-black px-6 font-bold py-3 rounded-lg font-sans">Join the Group</a>
+      </div>
       </div>
      
     </Layout>
