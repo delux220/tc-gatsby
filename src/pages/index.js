@@ -3,7 +3,7 @@ import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
 import ArticlesComponent from "../components/articles";
-
+import moment from 'moment';
 
 const IndexPage = () => {
   const data = useStaticQuery(query);
@@ -53,10 +53,42 @@ const IndexPage = () => {
         <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="bg-white text-black px-6 font-bold py-3 rounded-lg font-sans">Join the Group</a>
       </div>
       </div>
-     
-    </Layout> 
+     <div className="bg-black">
+      <div className="container mx-auto py-20">
+        <div className="text-center">
+          <h3 className="font-sans font-bold text-white">Upcoming Events</h3>
+          <p className="text-gray-400 mb-20">Here are some upcoming shows and events.</p>
+        </div>
+        {
+          data.allStrapiEvent.edges.map((event, i) => {
+
+            if (moment().unix() > (moment(event.node.startDate).add(1, 'day').unix() )) {
+              return null;
+            }
+
+
+            return <div className="grid grid-cols-3" key={`event-${event.id}`}>
+              <div className="p-5">
+                <h3 className="text-white block mb-0">{moment(event.node.startDate).format('MMMM Do')}</h3>
+                <span className="text-gray-400">{moment(event.node.startDate).format('h:mm a')}</span>
+              </div>
+              <div className="p-5">
+                <h3 className="text-white block font-bold mb-0">{event.node.title}</h3>
+                <span className="text-gray-400 block">{event.node.venueName}</span>
+                <small className="text-gray-400">{event.node.venueAddress}</small>
+
+              </div>
+              <div className="text-right p-5"><a href={event.node.link} target="_blank" className="mt-10 bg-pink-600 text-white px-6 font-bold py-3 rounded-lg font-sans hover:text-black">Details</a></div>
+            </div>
+          })
+        }
+
+
+      </div>
+     </div>
+    </Layout>
   );
-}; 
+};
 
 const query = graphql`
   query {
@@ -101,7 +133,19 @@ const query = graphql`
         }
       }
     }
-    
+    allStrapiEvent(sort: {fields: startDate, order: ASC}) {
+      edges {
+        node {
+          id
+          title
+          startDate
+          slug
+          venueName
+          venueAddress
+          link
+        }
+      }
+    }
 
   }
 `;
