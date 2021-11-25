@@ -56,7 +56,7 @@ const IndexPage = () => {
      
     </Layout> 
   );
-};
+}; 
 
 const query = graphql`
   query {
