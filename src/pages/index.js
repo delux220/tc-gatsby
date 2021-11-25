@@ -17,10 +17,10 @@ const IndexPage = () => {
           <h3 className="font-thin uppercase font-sans py-0 my-0 text-gray-400">{data.strapiHero.Subtitle}</h3>
           </div>
         </div>
-        <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
-          <GatsbyImage
-            image={data.strapiHero.Image.localFile.childImageSharp.gatsbyImageData}
-            alt={`Hero image`}
+        <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2 grayscale">
+          <img
+            src={data.strapiHero.Image.localFile.publicURL}
+            alt={`Hero image`} className="grayscale"
           />
         </div>
           
@@ -80,9 +80,7 @@ const query = graphql`
       Subtitle
       Image {
         localFile {
-          childImageSharp {
-            gatsbyImageData(width: 800, height: 600, quality:100)
-          }
+          publicURL
         }
       }
     }
