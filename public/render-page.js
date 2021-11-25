@@ -3106,12 +3106,6 @@ var plugins = [{
     "include_favicon": true,
     "cacheDigest": "28fa62e8f0df87822482c7d5ad91bed0"
   }
-}, {
-  name: 'gatsby-plugin-offline',
-  plugin: __webpack_require__(/*! ./node_modules/gatsby-plugin-offline/gatsby-ssr */ "./node_modules/gatsby-plugin-offline/gatsby-ssr.js"),
-  options: {
-    "plugins": []
-  }
 }];
 /* global plugins */
 // During bootstrap, we write requires at top of this file which looks like:
@@ -4878,58 +4872,6 @@ var _default = function _default(pathname, localizedManifests) {
 };
 
 exports["default"] = _default;
-
-/***/ }),
-
-/***/ "./node_modules/gatsby-plugin-offline/gatsby-ssr.js":
-/*!**********************************************************!*\
-  !*** ./node_modules/gatsby-plugin-offline/gatsby-ssr.js ***!
-  \**********************************************************/
-/***/ ((__unused_webpack_module, exports, __webpack_require__) => {
-
-"use strict";
-
-
-var _interopRequireDefault = __webpack_require__(/*! @babel/runtime/helpers/interopRequireDefault */ "./node_modules/@babel/runtime/helpers/interopRequireDefault.js");
-
-exports.__esModule = true;
-exports.onRenderBody = exports.onPreRenderHTML = void 0;
-
-var _react = _interopRequireDefault(__webpack_require__(/*! react */ "react"));
-
-var onPreRenderHTML = function onPreRenderHTML(_ref) {
-  var getHeadComponents = _ref.getHeadComponents,
-      pathname = _ref.pathname,
-      replaceHeadComponents = _ref.replaceHeadComponents;
-  if (pathname !== "/offline-plugin-app-shell-fallback/") return;
-  var headComponents = getHeadComponents();
-  var filteredHeadComponents = headComponents.filter(function (_ref2) {
-    var type = _ref2.type,
-        props = _ref2.props;
-    return !(type === "link" && props.as === "fetch" && props.rel === "preload" && (props.href.startsWith("/static/d/") || props.href.startsWith("/page-data/")));
-  });
-  replaceHeadComponents(filteredHeadComponents);
-};
-
-exports.onPreRenderHTML = onPreRenderHTML;
-
-var onRenderBody = function onRenderBody(_ref3) {
-  var pathname = _ref3.pathname,
-      setHeadComponents = _ref3.setHeadComponents;
-
-  if (pathname !== "/offline-plugin-app-shell-fallback/") {
-    return;
-  }
-
-  setHeadComponents([/*#__PURE__*/_react.default.createElement("noscript", {
-    key: "disable-offline-shell"
-  }, /*#__PURE__*/_react.default.createElement("meta", {
-    httpEquiv: "refresh",
-    content: "0;url=/.gatsby-plugin-offline:api=disableOfflineShell&redirect=true"
-  }))]);
-};
-
-exports.onRenderBody = onRenderBody;
 
 /***/ }),
 
