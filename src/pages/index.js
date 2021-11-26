@@ -49,8 +49,8 @@ const IndexPage = () => {
       <div className="bg-pink-600">
       <div className="container mx-auto text-center py-20">
         <h3 className="font-sans font-bold text-white">Join our Patreon</h3>
-        <p className="text-pink-300 mb-10">Add a description here</p>
-        <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="bg-white text-black px-6 font-bold py-3 rounded-lg font-sans">Join the Group</a>
+        <p className="text-pink-300 mb-10">Support me on Patreon, and receive exclusive content.</p>
+        <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="bg-white text-black px-6 font-bold py-3 rounded-lg font-sans hover:text-white hover:bg-black">Join the Group</a>
       </div>
       </div>
      <div className="bg-black">
@@ -63,7 +63,7 @@ const IndexPage = () => {
           data.allStrapiEvent.edges.map((event, i) => {
 
             if (moment().unix() > (moment(event.node.startDate).add(1, 'day').unix() )) {
-              return null;
+              return <div/>;
             }
 
 
@@ -84,6 +84,20 @@ const IndexPage = () => {
         }
 
 
+      </div>
+     </div>
+     <div className="bg-pink-600">
+      <div className="container mx-auto py-10 border-b">
+      <div className="w-1/3 mx-auto">
+        <h4 className="font-bold font-sans text-white">Subscribe to my mailing list</h4>
+        <p className="text-black text-opacity-60 text-sm">Receive updates on upcoming shows, events, and projects</p>
+        <div className="flex items-center  py-2">
+          <input className="font-sans appearance-none bg-white border-1 w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="email" placeholder="Email Address" />
+          <button className="font-sans flex-shrink-0 bg-black text-sm border-0 text-white py-3 px-5 rounded" type="button">
+            Sign Up
+          </button>
+        </div>
+        </div>
       </div>
      </div>
     </Layout>

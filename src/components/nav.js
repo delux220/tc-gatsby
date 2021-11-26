@@ -9,6 +9,12 @@ const Nav = () => {
   <StaticQuery
     query={graphql`
       query {
+        strapiSocial {
+          Facebook
+          Twitter
+          TikTok
+          Instagram
+        }
         strapiGlobal {
           siteName
         }
@@ -41,17 +47,52 @@ const Nav = () => {
             </div>
           </nav>
           {menuOpen&&<div className="fixed bg-black bg-opacity-90 object-right-top w-full  z-50 h-screen">
-          <button onClick={() => setMenuOpen(false)} className="color-white fixed mt-10 py-3 px-5 ml-10 object-right-top bg-gray-50 rounded"><span className="text-xl font-bold text-black">&times;</span></button>
-              <ul className="text-center">
-                {data.allStrapiCategory.edges.map((category, i) => (
-                  <li key={`category__${category.node.slug}`} className=" my-20">
-                    <Link to={`/category/${category.node.slug}`} className="text-xl text-white">
-                      {category.node.name}
-                    </Link>
-                  </li>
-                ))}
+          <button onClick={() => setMenuOpen(false)} style={{position:'absolute', right: 20, top:20}} className="color-white mt-10 py-3 px-5 mr-20 bg-gray-50 rounded "><span className="text-xl font-bold text-black">&times;</span></button>
+           
+          <div className="flex content-center items-center h-full w-full">
+          <div className="w-full center">
+          
+             <ul className="text-center" style={{clear:'both'}}>
+                <li className=" my-10">
+                  <Link to={`/`} className="text-xl text-white hover:text-gray-500">
+                    Home
+                  </Link>
+                </li>
+                <li className=" my-10">
+                  <Link to={`/about`} className="text-xl text-white hover:text-gray-500">
+                    About
+                  </Link>
+                </li>
+                
+                <li className=" my-10">
+                  <Link to={`/merch`} className="text-xl text-white hover:text-gray-500">
+                    Merch
+                  </Link>
+                </li>
+
               </ul>
-            </div>}
+              <div className="mx-auto mt-20 w-96 text-center">
+              <div className="grid grid-cols-4 mt-10">
+          <div className="block">
+          <a href={data.strapiSocial.Facebook} className="w-5 text-center hover:text-gray-500">
+            <img src="/fb.svg" className="w-5 m-0 mx-auto"/>
+            </a>
+            </div>
+            <a href={data.strapiSocial.Twitter} className="inline hover:text-gray-500">
+            <img src="/twitter.svg" className="w-5 mx-auto"/>
+            </a>
+            <a href={data.strapiSocial.Instagram} className=" hover:text-gray-500">
+            <img src="/ig.svg" className="w-5 mx-auto"/>
+            </a>
+            <a href={data.strapiSocial.TikTok} className=" hover:text-gray-500">
+            <img src="/tiktok.svg" className="w-5 mx-auto"/>
+            </a>
+            </div>
+            </div>
+            </div>
+            </div>
+            </div>
+            }
 
         </div>
       </div>

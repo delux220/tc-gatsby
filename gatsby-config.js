@@ -18,7 +18,7 @@ module.exports = {
       options: {
         apiURL: "https://damp-spire-01530.herokuapp.com",
         collectionTypes: ["article", "category", "writer", "podcasts", "event"], 
-        singleTypes: [`homepage`, `global`, `hero`],
+        singleTypes: [`homepage`, `global`, `hero`, `about-page`, `social`],
         queryLimit: 1000,
       },
     },

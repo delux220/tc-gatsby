@@ -1,3 +1,5 @@
+const path = require("path")
+
 exports.onCreateWebpackConfig = ({
     actions,
     plugins,
@@ -21,3 +23,15 @@ exports.onCreateWebpackConfig = ({
       })
     }
   }
+exports.createPages = async({graphql, actions}) => {
+  /*const { createPage } = actions;
+
+  const aboutTemplate = path.resolve(`src/pages/about.js`)
+
+  createPage({
+    path: `/about`,
+    component: aboutTemplate
+  });*/
+
+
+};
