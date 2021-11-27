@@ -54,7 +54,7 @@ const ContactPage = () => {
     			</div>
           </div>
           <div className="p-5">
-            <form action="https://getform.io/f/0f6b6ed3-3b39-4a34-8b58-6d097dd456cd" method="post" target="_blank" onSubmit={validate}>
+            <form action="https://getform.io/f/6b777d54-32b6-45e6-bb0a-1dfa5ba1d8bd" method="post" target="_blank" onSubmit={validate}>
               <label className="font-sans text-sm text-pink-400 mt-3">Full Name</label>
               <input type="text" name="name" className="p-3 bg-white font-sans block w-full mb-5"  placeholder="" onChange={(e) => setName(e.value)} value={name}/>
               <label className="font-sans text-sm text-pink-400 mt-3">Email Address</label>

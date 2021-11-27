@@ -34,7 +34,7 @@ const Nav = () => {
           <nav className="fixed w-full flex items-center justify-between flex-wrap  p-6 bg-black z-40">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
              
-              <Link to="/" className="text-gray-500 font-sans font-thin uppercase text-sm">{data.strapiGlobal.siteName}</Link>
+              <Link to="/" className="hover:no-underline hover:text-pink-500 text-gray-500 font-sans font-thin uppercase text-sm">{data.strapiGlobal.siteName}</Link>
                
             </div>
             <div className="">
@@ -54,23 +54,23 @@ const Nav = () => {
           
              <ul className="text-center" style={{clear:'both'}}>
                 <li className=" my-10">
-                  <Link to={`/`} className="text-xl font-sans font-bold text-white hover:text-gray-500">
+                  <Link to={`/`} className="text-xl font-sans font-bold text-white hover:text-gray-500 hover:no-underline">
                     Home
                   </Link>
                 </li>
                 <li className=" my-10">
-                  <Link to={`/about`} className="text-xl font-sans font-bold text-white hover:text-gray-500">
+                  <Link to={`/about`} className="text-xl font-sans font-bold text-white hover:text-gray-500 hover:no-underline">
                     About
                   </Link>
                 </li>
                 
                 <li className=" my-10">
-                  <Link to={`/merch`} className="text-xl font-sans font-bold text-white hover:text-gray-500">
+                  <Link to={`/merch`} className="text-xl font-sans font-bold text-white hover:text-gray-500 hover:no-underline">
                     Merch
                   </Link>
                 </li>
                 <li className=" my-10">
-                  <Link to={`/contact`} className="text-xl font-sans font-bold text-white hover:text-gray-500">
+                  <Link to={`/contact`} className="text-xl font-sans font-bold text-white hover:text-gray-500 hover:no-underline">
                     Contact
                   </Link>
                 </li>

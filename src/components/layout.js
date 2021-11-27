@@ -36,10 +36,10 @@ const Layout = ({ children, seo }) => (
       <div className="container mx-auto px-20 pt-20 pb-10 flex">
         <div className="w-1/3 text-white">
           <strong className="block text-white">Pages</strong>
-          <Link to="/" className="block hover:text-black text-white text-opacity-70">Home</Link>
-          <Link to="/about" className="block hover:text-black text-white text-opacity-70">About</Link>
-          <Link to="/merch" className="block hover:text-black text-white text-opacity-70">Merch</Link>
-          <Link to="/contact" className="block hover:text-black text-white text-opacity-70">Contact</Link>
+          <Link to="/" className="block hover:text-black text-white text-opacity-70 hover:no-underline">Home</Link>
+          <Link to="/about" className="block hover:text-black text-white text-opacity-70 hover:no-underline">About</Link>
+          <Link to="/merch" className="block hover:text-black text-white text-opacity-70 hover:no-underline">Merch</Link>
+          <Link to="/contact" className="block hover:text-black text-white text-opacity-70 hover:no-underline">Contact</Link>
         </div>
         <div className="w-2/3 md:w-1/3 text-white">
         <strong className="block text-white mx-auto block text-center mb-5">Social</strong>

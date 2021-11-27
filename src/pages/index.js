@@ -86,20 +86,24 @@ const IndexPage = () => {
 
       </div>
      </div>
+     <form action="https://facebook.us13.list-manage.com/subscribe/post?u=d507655cd23e7659ab174e227&id=10dc7ca21c" method="post" target="_blank">
      <div className="bg-pink-600">
       <div className="container mx-auto py-10 border-b">
       <div className="px-5 md:w-1/2 mx-auto">
         <h4 className="font-bold font-sans text-white">Subscribe to my mailing list</h4>
         <p className="text-black text-opacity-60 text-sm">Receive updates on upcoming shows, events, and projects</p>
         <div className="flex items-center  py-2">
-          <input className="font-sans appearance-none bg-white border-1 w-full text-gray-700 mr-3 py-3 px-3 leading-tight focus:outline-none" type="email" placeholder="Email Address" />
-          <button className="font-sans flex-shrink-0 bg-black text-sm border-0 text-white py-3 px-5 rounded" type="button">
+          
+          <input className="font-sans appearance-none bg-white border-1 w-full text-gray-700 mr-3 py-3 px-3 leading-tight focus:outline-none" type="email" placeholder="Email Address" name="EMAIL" />
+          <button className="font-sans flex-shrink-0 bg-black text-sm border-0 text-white py-3 px-5 rounded" type="submit">
             Sign Up
           </button>
+          
         </div>
         </div>
       </div>
      </div>
+     </form>
     </Layout>
   );
 };
