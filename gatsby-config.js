@@ -17,7 +17,7 @@ module.exports = {
       resolve: "gatsby-source-strapi",
       options: {
         apiURL: "https://damp-spire-01530.herokuapp.com",
-        collectionTypes: ["article", "category", "writer", "podcasts", "event"], 
+        collectionTypes: ["article", "category", "writer", "podcasts", "event", "merch"], 
         singleTypes: [`homepage`, `global`, `hero`, `about-page`, `social`],
         queryLimit: 1000,
       },

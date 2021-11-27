@@ -40,7 +40,7 @@ const Layout = ({ children, seo }) => (
           <Link to="/about" className="block hover:text-black text-white text-opacity-70">About</Link>
           <Link to="/merch" className="block hover:text-black text-white text-opacity-70">Merch</Link>
         </div>
-        <div className="w-1/3 text-white">
+        <div className="w-2/3 md:w-1/3 text-white">
         <strong className="block text-white mx-auto block text-center mb-5">Social</strong>
           <div className="grid grid-cols-4">
             
@@ -59,9 +59,6 @@ const Layout = ({ children, seo }) => (
             </div>
         </div>
 
-        <div className="w-1/3 text-white">
-
-        </div>
       </div>
       <div className="bg-pink-600">
         <div className="container mx-auto pb-10 text-center">

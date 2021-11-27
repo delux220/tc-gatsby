@@ -32,7 +32,7 @@ const IndexPage = () => {
                 <GatsbyImage image={podcast.node.Artwork.localFile.childImageSharp.gatsbyImageData} className="max-w-full"/>
                 <h3 className="text-white font-sans font-bold">{podcast.node.Title}</h3>
                 <p className="text-gray-400 font-sans text-sm mb-10">{podcast.node.Description}</p>
-                <a href={podcast.node.URL} target="_blank" className="bg-pink-600 text-white px-6 font-bold py-3 rounded-lg font-sans">Listen</a>
+                <a href={podcast.node.URL} target="_blank" className="block text-center md:inline bg-pink-600 text-white px-6 font-bold py-3 rounded-lg font-sans">Listen</a>
               </div>)
           }
 
@@ -67,18 +67,18 @@ const IndexPage = () => {
             }
 
 
-            return <div className="grid grid-cols-3" key={`event-${event.id}`}>
-              <div className="p-5">
+            return <div className="grid grid-cols-3 gap-4 mb-10 pb-10 md:border-0" key={`event-${event.id}`}>
+              <div className="px-5">
                 <h3 className="text-white block mb-0">{moment(event.node.startDate).format('MMMM Do')}</h3>
                 <span className="text-gray-400">{moment(event.node.startDate).format('h:mm a')}</span>
               </div>
-              <div className="p-5">
+              <div className="px-5 col-span-2 md:col-span-1">
                 <h3 className="text-white block font-bold mb-0">{event.node.title}</h3>
                 <span className="text-gray-400 block">{event.node.venueName}</span>
                 <small className="text-gray-400">{event.node.venueAddress}</small>
 
               </div>
-              <div className="text-right p-5"><a href={event.node.link} target="_blank" className="mt-10 bg-pink-600 text-white px-6 font-bold py-3 rounded-lg font-sans hover:text-black">Details</a></div>
+              <div className="text-right px-5 w-full col-span-3 md:col-span-1"><a href={event.node.link} target="_blank" className="block text-center w-full md:w-auto md:inline md:mt-10 bg-pink-600 text-white px-6 font-bold py-3 rounded-lg font-sans hover:text-black">Details</a></div>
             </div>
           })
         }
@@ -88,11 +88,11 @@ const IndexPage = () => {
      </div>
      <div className="bg-pink-600">
       <div className="container mx-auto py-10 border-b">
-      <div className="w-1/3 mx-auto">
+      <div className="px-5 md:w-1/2 mx-auto">
         <h4 className="font-bold font-sans text-white">Subscribe to my mailing list</h4>
         <p className="text-black text-opacity-60 text-sm">Receive updates on upcoming shows, events, and projects</p>
         <div className="flex items-center  py-2">
-          <input className="font-sans appearance-none bg-white border-1 w-full text-gray-700 mr-3 py-3 px-2 leading-tight focus:outline-none" type="email" placeholder="Email Address" />
+          <input className="font-sans appearance-none bg-white border-1 w-full text-gray-700 mr-3 py-3 px-3 leading-tight focus:outline-none" type="email" placeholder="Email Address" />
           <button className="font-sans flex-shrink-0 bg-black text-sm border-0 text-white py-3 px-5 rounded" type="button">
             Sign Up
           </button>
