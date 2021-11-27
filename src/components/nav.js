@@ -34,7 +34,7 @@ const Nav = () => {
           <nav className="fixed w-full flex items-center justify-between flex-wrap  p-6 bg-black z-40">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
              
-              <Link to="/" className="text-gray-500">{data.strapiGlobal.siteName}</Link>
+              <Link to="/" className="text-gray-500 font-sans font-thin uppercase text-sm">{data.strapiGlobal.siteName}</Link>
                
             </div>
             <div className="">
@@ -47,26 +47,31 @@ const Nav = () => {
             </div>
           </nav>
           {menuOpen&&<div className="fixed bg-black bg-opacity-90 object-right-top w-full  z-50 h-screen">
-          <button onClick={() => setMenuOpen(false)} style={{position:'absolute', right: 20, top:20}} className="color-white mt-10 py-3 px-5 mr-20 bg-gray-50 rounded "><span className="text-xl font-bold text-black">&times;</span></button>
+          <button onClick={() => setMenuOpen(false)} style={{position:'absolute', right: 20, top:20}} className="color-white mt-10 py-3 px-5 mr-20 bg-gray-50 rounded-full "><span className="text-xl font-bold text-black">&times;</span></button>
            
           <div className="flex content-center items-center h-full w-full">
           <div className="w-full center">
           
              <ul className="text-center" style={{clear:'both'}}>
                 <li className=" my-10">
-                  <Link to={`/`} className="text-xl text-white hover:text-gray-500">
+                  <Link to={`/`} className="text-xl font-sans font-bold text-white hover:text-gray-500">
                     Home
                   </Link>
                 </li>
                 <li className=" my-10">
-                  <Link to={`/about`} className="text-xl text-white hover:text-gray-500">
+                  <Link to={`/about`} className="text-xl font-sans font-bold text-white hover:text-gray-500">
                     About
                   </Link>
                 </li>
                 
                 <li className=" my-10">
-                  <Link to={`/merch`} className="text-xl text-white hover:text-gray-500">
+                  <Link to={`/merch`} className="text-xl font-sans font-bold text-white hover:text-gray-500">
                     Merch
+                  </Link>
+                </li>
+                <li className=" my-10">
+                  <Link to={`/contact`} className="text-xl font-sans font-bold text-white hover:text-gray-500">
+                    Contact
                   </Link>
                 </li>
 
