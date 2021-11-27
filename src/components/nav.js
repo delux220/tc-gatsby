@@ -38,16 +38,22 @@ const Nav = () => {
                
             </div>
             <div className="">
+              <Link to={'/about'} className="font-thin hidden md:inline text-white font-sans hover:no-underline hover:text-pink-500 uppercase">About</Link>
+              <a href="https://www.patreon.com/TrashTalkPodcast" target="_blank"  className="font-thin uppercase hover:text-pink-500 hidden md:inline text-white font-sans hover:no-underline ml-4">Patreon</a>
+              <Link to={'/merch'} className="font-thin uppercase hidden md:inline text-white ml-4 font-sans hover:no-underline hover:text-pink-500">Merch</Link>
+              <Link to={'/contact'} className="font-thin uppercase hidden md:inline text-white ml-4 font-sans hover:no-underline hover:text-pink-500">Contact</Link>
+      
               <button
                 type="button"
                 onClick={() => setMenuOpen(!menuOpen)}
+                className="md:hidden"
               ><svg className="fill-current h-6 w-6 mr-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
               </button>
               
             </div>
           </nav>
           {menuOpen&&<div className="fixed bg-black bg-opacity-90 object-right-top w-full  z-50 h-screen">
-          <button onClick={() => setMenuOpen(false)} style={{position:'absolute', right: 20, top:20}} className="color-white mt-10 py-3 px-5 mr-20 bg-gray-50 rounded-full "><span className="text-xl font-bold text-black">&times;</span></button>
+          <button onClick={() => setMenuOpen(false)} style={{position:'absolute', right: 20, top:10}} className="color-white mt-10 py-3 px-5  bg-gray-50 rounded-full "><span className="text-xl font-bold text-black">&times;</span></button>
            
           <div className="flex content-center items-center h-full w-full">
           <div className="w-full center">
@@ -68,6 +74,11 @@ const Nav = () => {
                   <Link to={`/merch`} className="text-xl font-sans font-bold text-white hover:text-gray-500 hover:no-underline">
                     Merch
                   </Link>
+                </li>
+                 <li className=" my-10">
+                  <a href="https://www.patreon.com/TrashTalkPodcast" className="text-xl font-sans font-bold text-white hover:text-gray-500 hover:no-underline">
+                    Patreon
+                  </a>
                 </li>
                 <li className=" my-10">
                   <Link to={`/contact`} className="text-xl font-sans font-bold text-white hover:text-gray-500 hover:no-underline">

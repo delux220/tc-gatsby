@@ -47,10 +47,10 @@ const IndexPage = () => {
       </div>
       </div>
       <div className="bg-pink-600">
-      <div className="container mx-auto text-center py-20">
-        <h3 className="font-sans font-bold text-white">Join our Patreon</h3>
-        <p className="text-pink-300 mb-10">Support me on Patreon, and receive exclusive content.</p>
-        <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="bg-white text-black px-6 font-bold py-3 rounded-lg font-sans hover:text-white hover:bg-black">Join the Group</a>
+      <div className="container mx-auto text-center py-20 px-5">
+        <h3 className="font-sans font-bold text-white">Support us on Patreon</h3>
+        <p className="text-pink-300 mb-10">Support Trash Talk Podcasts on Patreon, and receive exclusive content.</p>
+        <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="block md:inline bg-white text-black px-6 font-bold py-3 rounded-lg font-sans hover:text-white hover:bg-black">Visit Patreon</a>
       </div>
       </div>
      <div className="bg-black">

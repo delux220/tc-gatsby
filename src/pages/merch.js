@@ -45,7 +45,7 @@ query {
         image {
           localFile {
             childImageSharp {
-              gatsbyImageData(quality:95, width:800, height:800)
+              gatsbyImageData(quality:95, width:800, height:800, transformOptions: {fit: CONTAIN})
             }
           }
         }
