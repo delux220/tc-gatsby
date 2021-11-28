@@ -122,9 +122,7 @@ const query = graphql`
         metaTitle
         metaDescription
         shareImage {
-          localFile {
-            publicURL
-          }
+          url
         }
       }
     }
