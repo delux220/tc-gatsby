@@ -31,18 +31,21 @@ const Nav = () => {
     render={(data) => (
       <div>
         <div className="bg-black pb-14">
-          <nav className="fixed w-full flex items-center justify-between flex-wrap  p-6 bg-black z-40">
+          <nav className="fixed w-full flex items-center justify-between flex-wrap  p-6 bg-black z-40  shadow ">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
              
-              <Link to="/" className="hover:no-underline hover:text-pink-500 text-gray-500 font-sans font-thin uppercase text-sm">{data.strapiGlobal.siteName}</Link>
+              <Link to="/" className="tracking-wide hover:no-underline hover:text-pink-500 text-gray-500 font-sans font-thin uppercase">{data.strapiGlobal.siteName}</Link>
                
             </div>
             <div className="">
-              <Link to={'/about'} className="font-thin hidden md:inline text-white font-sans hover:no-underline hover:text-pink-500 uppercase">About</Link>
-              <a href="https://www.patreon.com/TrashTalkPodcast" target="_blank"  className="font-thin uppercase hover:text-pink-500 hidden md:inline text-white font-sans hover:no-underline ml-4">Patreon</a>
-              <Link to={'/merch'} className="font-thin uppercase hidden md:inline text-white ml-4 font-sans hover:no-underline hover:text-pink-500">Merch</Link>
-              <Link to={'/contact'} className="font-thin uppercase hidden md:inline text-white ml-4 font-sans hover:no-underline hover:text-pink-500">Contact</Link>
-      
+              <Link to={'/'} className="tracking-wide font-thin hidden md:inline text-white font-sans hover:no-underline hover:text-pink-500 uppercase">Home</Link>
+              <Link to={'/about'} className="tracking-wide ml-4 font-thin hidden md:inline text-white font-sans hover:no-underline hover:text-pink-500 uppercase">About</Link>
+              <Link to={'/#events'} className="ml-4 font-thin hidden md:inline text-white font-sans hover:no-underline hover:text-pink-500 uppercase">Events</Link>
+              
+              <Link to={'/merch'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-sans hover:no-underline hover:text-pink-500">Merch</Link>
+              <Link to={'/contact'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-sans hover:no-underline hover:text-pink-500">Contact</Link>
+              <a href="https://www.patreon.com/TrashTalkPodcast" target="_blank"  className="tracking-wide py-2 font-bold uppercase hover:bg-pink-500 bg-white px-3 hidden md:inline text-black rounded-full font-sans hover:text-black hover:no-underline ml-4">Patreon</a>
+
               <button
                 type="button"
                 onClick={() => setMenuOpen(!menuOpen)}

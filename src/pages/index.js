@@ -10,50 +10,54 @@ const IndexPage = () => {
 
   return (
     <Layout seo={data.strapiHomepage.seo}>
-      <div className="container flex px-6 pt-4 mx-auto lg:h-128 mb-12">
+      <div className="container flex px-6 pt-4 mx-auto lg:h-128 mb-64">
         <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
           <div className=" text-right w-full">
-          <h1 className="font-bold font-sans pb-0 mb-0 text-white  text-right">{data.strapiHero.Title}</h1>
+          <h1 className="font-bold font-sans pb-0 mb-0 text-white  text-right mt-10 md:mt-0">{data.strapiHero.Title}</h1>
           <h3 className="font-thin uppercase font-sans py-0 my-0 text-gray-400">{data.strapiHero.Subtitle}</h3>
           </div>
         </div>
         <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2 grayscale">
           <img
             src={data.strapiHero.Image.localFile.publicURL}
-            alt={`Hero image`} className="grayscale"
+            alt={`Hero image`} className="block mt-10"
           />
         </div>
           
       </div>
-      <div className="container mx-auto pb-20">
+      <div className=" bg-black">
+      <div className="container mx-auto pb-0">
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-3">
           {
-            data.allStrapiPodcasts.edges.map((podcast, i) => <div className="p-5" key={`podcast-${i}`}>
-                <GatsbyImage image={podcast.node.Artwork.localFile.childImageSharp.gatsbyImageData} className="max-w-full"/>
+            data.allStrapiPodcasts.edges.map((podcast, i) => <div className="px-5 pt-5 -mt-32 mb-32" key={`podcast-${i}`}>
+                <GatsbyImage image={podcast.node.Artwork.localFile.childImageSharp.gatsbyImageData} className="max-w-full rounded"/>
                 <h3 className="text-white font-sans font-bold">{podcast.node.Title}</h3>
+
                 <p className="text-gray-400 font-sans text-sm mb-10">{podcast.node.Description}</p>
-                <a href={podcast.node.URL} target="_blank" className="block text-center md:inline bg-pink-600 text-white px-6 font-bold py-3 rounded-lg font-sans">Listen</a>
+                <a href={podcast.node.URL} target="_blank" className="md:w-1/2 block text-center md:inline-block bg-pink-600 text-white px-6 font-bold py-3 rounded-lg font-sans">Listen</a>
+                <a href="#" className="px-6 py-3 font-sans md:inline-block md:w-1/2 md:bg-gray-900 block text-center text-gray-300 rounded-lg hover:text-white">Facebook Group</a>
               </div>)
           }
 
         </div>
 
       </div>
-      <div className="bg-black">
+      <div className="bg-gray-900 hidden">
       <div className="container mx-auto text-center py-20">
         <h3 className="font-sans font-bold text-white">Join the Trash Talk Facebook Group</h3>
         <p className="text-gray-400 mb-10">Add a description here</p>
         <a href={`https://www.facebook.com/groups/90daypodcast`} target="_blank" className="bg-pink-600 text-white px-6 font-bold py-3 rounded-lg font-sans">Join the Group</a>
       </div>
       </div>
-      <div className="bg-pink-600">
-      <div className="container mx-auto text-center py-20 px-5">
+      </div>
+      <div className="bg-black">
+      <div className="container mx-auto text-center py-20 px-5 bg-pink-600 rounded">
         <h3 className="font-sans font-bold text-white">Support us on Patreon</h3>
-        <p className="text-pink-300 mb-10">Support Trash Talk Podcasts on Patreon, and receive exclusive content.</p>
+        <p className="text-pink-300 mb-10">Support Trash Talk Podcasts on Patreon, and access exclusive content.</p>
         <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="block md:inline bg-white text-black px-6 font-bold py-3 rounded-lg font-sans hover:text-white hover:bg-black">Visit Patreon</a>
       </div>
       </div>
-     <div className="bg-black">
+     <div className="bg-black" id="events">
       <div className="container mx-auto py-20">
         <div className="text-center">
           <h3 className="font-sans font-bold text-white">Upcoming Events</h3>
@@ -69,8 +73,8 @@ const IndexPage = () => {
 
             return <div className="grid grid-cols-3 gap-4 mb-10 pb-10 md:border-0" key={`event-${event.id}`}>
               <div className="px-5">
-                <h3 className="text-white block mb-0">{moment(event.node.startDate).format('MMMM Do')}</h3>
-                <span className="text-gray-400">{moment(event.node.startDate).format('h:mm a')}</span>
+                <h3 className="text-white block mb-0 font-thin">{moment(event.node.startDate).format('MMMM Do')}</h3>
+                <span className="text-gray-400 font-thin">{moment(event.node.startDate).format('h:mm a')}</span>
               </div>
               <div className="px-5 col-span-2 md:col-span-1">
                 <h3 className="text-white block font-bold mb-0">{event.node.title}</h3>
@@ -88,10 +92,10 @@ const IndexPage = () => {
      </div>
      <form action="https://facebook.us13.list-manage.com/subscribe/post?u=d507655cd23e7659ab174e227&id=10dc7ca21c" method="post" target="_blank">
      <div className="bg-pink-600">
-      <div className="container mx-auto py-10 border-b">
+      <div className="container mx-auto py-10">
       <div className="px-5 md:w-1/2 mx-auto">
         <h4 className="font-bold font-sans text-white">Subscribe to my mailing list</h4>
-        <p className="text-black text-opacity-60 text-sm">Receive updates on upcoming shows, events, and projects</p>
+        <p className="text-white text-opacity-60 text-sm">Receive updates on upcoming shows, events, and projects</p>
         <div className="flex items-center  py-2">
           
           <input className="font-sans appearance-none bg-white border-1 w-full text-gray-700 mr-3 py-3 px-3 leading-tight focus:outline-none" type="email" placeholder="Email Address" name="EMAIL" />
