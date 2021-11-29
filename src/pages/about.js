@@ -11,7 +11,7 @@ const AboutPage = () => {
     <Layout seo={data.strapiHomepage.seo}>
     <div className="bg-black min-h-screen">
     <div className="bg-black flex px-6 pt-4 mx-auto lg:h-128 pb-12 ">
-    	<div className="about container flex max-auto">
+    	<div className="about container flex mx-auto">
     		<div className="sm:w-full md:w-1/2 p-5">
     			<GatsbyImage image={data.strapiAboutPage.photo.localFile.childImageSharp.gatsbyImageData} className="max-w-full"/>
     		</div>

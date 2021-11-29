@@ -35,7 +35,9 @@ const IndexPage = () => {
 
                 <p className="text-gray-400 font-sans text-sm mb-10">{podcast.node.Description}</p>
                 <a href={podcast.node.URL} target="_blank" className="md:w-1/2 block text-center md:inline-block bg-pink-600 text-white px-6 font-bold py-3 rounded-lg font-sans">Listen</a>
-                <a href="#" className="px-6 py-3 font-sans md:inline-block md:w-1/2 md:bg-gray-900 block text-center text-gray-300 rounded-lg hover:text-white">Facebook Group</a>
+                {
+                  podcast.node.FacebookGroupURL!=null&&<a href="#" className="hover:no-underline px-6 font-bold py-3 font-sans md:inline-block md:w-1/2 md:bg-gray-900 block text-center text-gray-300 rounded-lg hover:text-white">Join Group</a>
+                }
               </div>)
           }
 
@@ -51,7 +53,7 @@ const IndexPage = () => {
       </div>
       </div>
       <div className="bg-black">
-      <div className="container mx-auto text-center py-20 px-5 bg-pink-600 rounded">
+      <div className="container mx-auto text-center py-20 px-5 bg-pink-600 rounded-lg">
         <h3 className="font-sans font-bold text-white">Support us on Patreon</h3>
         <p className="text-pink-300 mb-10">Support Trash Talk Podcasts on Patreon, and access exclusive content.</p>
         <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="block md:inline bg-white text-black px-6 font-bold py-3 rounded-lg font-sans hover:text-white hover:bg-black">Visit Patreon</a>
@@ -142,6 +144,7 @@ const query = graphql`
           id
           Title
           Description
+          FacebookGroupURL
           Artwork {
             localFile {
               childImageSharp {

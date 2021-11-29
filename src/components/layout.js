@@ -31,17 +31,18 @@ const Layout = ({ children, seo }) => (
         <Nav />
         <main className="bg-black">{children}</main>
         <div className="bg-pink-600">
-      <div className="container mx-auto px-20 pt-20 pb-10 flex">
+      <div className="container mx-auto px-5 md:px-20 pt-20 pb-10 flex">
         <div className="w-1/3 text-white">
           <strong className="block text-white">Pages</strong>
           <Link to="/" className="block hover:text-black text-white text-opacity-70 hover:no-underline">Home</Link>
           <Link to="/about" className="block hover:text-black text-white text-opacity-70 hover:no-underline">About</Link>
           <Link to="/merch" className="block hover:text-black text-white text-opacity-70 hover:no-underline">Merch</Link>
           <Link to="/contact" className="block hover:text-black text-white text-opacity-70 hover:no-underline">Contact</Link>
+          <a href="https://www.patreon.com/TrashTalkPodcast" target="_blank" className="block hover:text-black text-white text-opacity-70 hover:no-underline">Patreon</a>
         </div>
         <div className="w-2/3 md:w-1/3 text-white">
         <strong className="block text-white mx-auto block text-center mb-5">Social</strong>
-          <div className="grid grid-cols-4">
+          <div className="grid grid-cols-4 mt-10">
             
               <a href={data.strapiSocial.Facebook} className="">
                 <img src="/fb.svg" className="w-5 mx-auto"/>
