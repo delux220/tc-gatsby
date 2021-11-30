@@ -40,7 +40,7 @@ const IndexPage = () => {
         </div>
           
       </div>
-      <div className="bg-black">
+      <div className="bg-black hidden">
       <div className="container mx-auto text-center py-10 px-5 bg-black rounded-lg">
         <h3 className="font-sans font-bold text-white">Support Trash Talk on Patreon</h3>
       </div>
