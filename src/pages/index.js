@@ -8,6 +8,26 @@ import moment from 'moment';
 const IndexPage = () => {
   const data = useStaticQuery(query);
 
+  const [noEvents, setNoEvents] = React.useState(false);
+
+  React.useEffect(() => {
+
+    var found = false;
+
+    for(var i = 0; i < data.allStrapiEvent.edges.length; i++) {
+      if (moment().unix() < (moment(data.allStrapiEvent.edges[i].node.startDate).subtract(1, 'day').unix() )) {
+        found = true;
+        break;
+      }
+      
+    }
+
+    if (found == false) {
+      setNoEvents(true);
+    }
+
+  }, []);
+
   return (
     <Layout seo={data.strapiHomepage.seo}>
       <div className="container flex px-6 pt-4 mx-auto lg:h-128 mb-32">
@@ -57,6 +77,7 @@ const IndexPage = () => {
       
       <div className=" bg-black">
       <div className="container mx-auto pb-0">
+
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-3">
           {
             data.allStrapiPodcasts.edges.map((podcast, i) => <div className="px-5 pt-5 mb-32" key={`podcast-${i}`}>
@@ -70,6 +91,7 @@ const IndexPage = () => {
                 }
               </div>)
           }
+
 
         </div>
 
@@ -86,8 +108,8 @@ const IndexPage = () => {
      <div className="bg-black" id="events">
       <div className="container mx-auto py-20">
         <div className="text-center">
-          <h3 className="font-sans font-bold text-white">Upcoming Events</h3>
-          <p className="text-gray-400 mb-20">Here are some upcoming shows and events.</p>
+          <h3 className="font-sans font-bold text-white mb-10">Upcoming Events</h3>
+          {noEvents==false?<p className="text-gray-400 mb-20 font-sans">Here are some upcoming shows.</p>:<p className="text-gray-400 mb-20 font-sans">Nothing right now. Stay tuned for upcoming shows!</p>}
         </div>
         {
           data.allStrapiEvent.edges.map((event, i) => {
