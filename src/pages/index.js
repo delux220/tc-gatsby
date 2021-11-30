@@ -10,11 +10,26 @@ const IndexPage = () => {
 
   return (
     <Layout seo={data.strapiHomepage.seo}>
-      <div className="container flex px-6 pt-4 mx-auto lg:h-128 mb-64">
+      <div className="container flex px-6 pt-4 mx-auto lg:h-128 mb-32">
         <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
-          <div className=" text-right w-full">
-          <h1 className="font-bold font-sans pb-0 mb-0 text-white  text-right mt-10 md:mt-0">{data.strapiHero.Title}</h1>
+          <div className=" text-center w-full">
+          <h1 className="font-bold font-sans pb-0 mb-0 text-white mt-10 md:mt-0">{data.strapiHero.Title}</h1>
           <h3 className="font-thin uppercase font-sans py-0 my-0 text-gray-400">{data.strapiHero.Subtitle}</h3>
+          <div className="grid grid-cols-4 mt-10">
+            
+              <a href={data.strapiSocial.Facebook} className="">
+                <img src="/fb.svg" className="w-5 mx-auto"/>
+              </a>
+              <a href={data.strapiSocial.Twitter} className="inline">
+              <img src="/twitter.svg" className="w-5 mx-auto"/>
+              </a>
+              <a href={data.strapiSocial.Instagram} className="">
+              <img src="/ig.svg" className="w-5 mx-auto"/>
+              </a>
+              <a href={data.strapiSocial.TikTok} className="">
+              <img src="/tiktok.svg" className="w-5 mx-auto"/>
+              </a>
+            </div>
           </div>
         </div>
         <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2 grayscale">
@@ -25,11 +40,14 @@ const IndexPage = () => {
         </div>
           
       </div>
+      <div className="mb-32">
+        <img src="https://res.cloudinary.com/meshed-nyc/image/upload/v1638289372/197231817_159683919470988_150262458118792007_n_w1remy.png" className="max-w-full"/>
+      </div>
       <div className=" bg-black">
       <div className="container mx-auto pb-0">
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-3">
           {
-            data.allStrapiPodcasts.edges.map((podcast, i) => <div className="px-5 pt-5 -mt-32 mb-32" key={`podcast-${i}`}>
+            data.allStrapiPodcasts.edges.map((podcast, i) => <div className="px-5 pt-5 mb-32" key={`podcast-${i}`}>
                 <GatsbyImage image={podcast.node.Artwork.localFile.childImageSharp.gatsbyImageData} className="max-w-full rounded"/>
                 <h3 className="text-white font-sans font-bold">{podcast.node.Title}</h3>
 
@@ -55,7 +73,7 @@ const IndexPage = () => {
       <div className="bg-black">
       <div className="container mx-auto text-center py-20 px-5 bg-pink-600 rounded-lg">
         <h3 className="font-sans font-bold text-white">Support us on Patreon</h3>
-        <p className="text-pink-300 mb-10">Support Trash Talk Podcasts on Patreon, and access exclusive content.</p>
+        <p className="text-pink-300 mb-10">Please join our Patreon for Trash Talk bonus content.</p>
         <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="block md:inline bg-white text-black px-6 font-bold py-3 rounded-lg font-sans hover:text-white hover:bg-black">Visit Patreon</a>
       </div>
       </div>
@@ -127,6 +145,12 @@ const query = graphql`
           url
         }
       }
+    }
+    strapiSocial {
+      Facebook
+      Twitter
+      TikTok
+      Instagram
     }
     strapiHero {
       id
