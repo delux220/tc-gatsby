@@ -40,16 +40,17 @@ const IndexPage = () => {
         </div>
           
       </div>
-      <div className=" bg-black">
- <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" ><img src="https://res.cloudinary.com/meshed-nyc/image/upload/v1638289372/197231817_159683919470988_150262458118792007_n_w1remy.png" className="max-w-full"/></a>
-      </div>
       <div className="bg-black mb-16">
       <div className="container mx-auto text-center py-20 px-5 bg-black rounded-lg">
-        <h3 className="font-sans font-bold text-white">Support us on Patreon</h3>
+        <h3 className="font-sans font-bold text-white">Support Trash Talk on Patreon</h3>
         <p className="text-purple-300 mb-10">Please join our Patreon for Trash Talk bonus content.</p>
-        <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="block md:inline bg-white text-black px-6 font-bold py-3 text-lg rounded-lg font-sans hover:text-white hover:bg-purple-600 hover:no-underline">Join</a>
+        <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="block md:inline bg-white text-black px-6 font-bold py-3 text-lg rounded-lg font-sans hover:text-white hover:bg-purple-600 hover:no-underline">Join Patreon</a>
       </div>
       </div>
+      <div className=" bg-black mb-16">
+ <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" ><img src="https://res.cloudinary.com/meshed-nyc/image/upload/v1638289372/197231817_159683919470988_150262458118792007_n_w1remy.png" className="max-w-full"/></a>
+      </div>
+      
       <div className=" bg-black">
       <div className="container mx-auto pb-0">
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-3">
