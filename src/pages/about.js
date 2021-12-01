@@ -11,28 +11,27 @@ const AboutPage = () => {
     <Layout seo={data.strapiHomepage.seo}>
     <div className="bg-black min-h-screen">
     <div className="bg-black flex px-6 pt-4 mx-auto lg:h-128 pb-12 ">
-    	<div className="about container flex mx-auto">
-    		<div className="sm:w-full md:w-1/2 p-5">
+    	<div className="about container  mx-auto grid md:grid-cols-2">
+    		<div className=" p-5">
     			<GatsbyImage image={data.strapiAboutPage.photo.localFile.childImageSharp.gatsbyImageData} className="max-w-full"/>
     		</div>
-    		<div className="sm:w-full md:w-1/2 p-5">
+    		<div className=" p-5">
     			<h3 className="text-white font-bold text-5xl mb-5 font-sans">{data.strapiAboutPage.title}</h3>
     			<div className="text-gray-500 font-sans">
     			<MarkdownView markdown={data.strapiAboutPage.description}/>
     			</div>
     			<div className="grid grid-cols-4 mt-10">
-    			<div className="block">
-    			<a href={data.strapiSocial.Facebook} className="w-5">
-    				<img src="/fb.svg" className="w-5 m-0"/>
+    			
+    			<a href={data.strapiSocial.Facebook} className="block mx-auto">
+    				<img src="/fb.svg" className="w-5"/>
         		</a>
-        		</div>
-        		<a href={data.strapiSocial.Twitter} className="inline">
+        		<a href={data.strapiSocial.Twitter} className=" block mx-auto">
     				<img src="/twitter.svg" className="w-5"/>
         		</a>
-        		<a href={data.strapiSocial.Instagram} className="">
+        		<a href={data.strapiSocial.Instagram} className=" block mx-auto">
     				<img src="/ig.svg" className="w-5"/>
         		</a>
-        		<a href={data.strapiSocial.TikTok} className="">
+        		<a href={data.strapiSocial.TikTok} className=" block mx-auto">
     				<img src="/tiktok.svg" className="w-5"/>
         		</a>
         		</div>

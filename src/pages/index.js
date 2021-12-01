@@ -87,7 +87,7 @@ const IndexPage = () => {
                 <p className="text-gray-400 font-sans text-sm mb-10">{podcast.node.Description}</p>
                 <a href={podcast.node.URL} target="_blank" className="md:w-1/2 block text-center md:inline-block bg-pink-600 text-white px-6 font-bold py-3 rounded-lg font-sans">Listen</a>
                 {
-                  podcast.node.FacebookGroupURL!=null&&<a href="#" className="hover:no-underline px-6 font-bold py-3 font-sans md:inline-block md:w-1/2 md:bg-gray-900 block text-center text-gray-300 rounded-lg hover:text-white">Join Group</a>
+                  podcast.node.FacebookGroupURL!=null&&<a target="_blank" href={podcast.node.FacebookGroupURL} className="hover:no-underline px-6 font-bold py-3 font-sans md:inline-block md:w-1/2 md:bg-gray-900 block text-center text-gray-300 rounded-lg hover:text-white">Join Group</a>
                 }
               </div>)
           }
