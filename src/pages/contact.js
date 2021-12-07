@@ -43,12 +43,12 @@ const ContactPage = () => {
     <Layout seo={data.strapiHomepage.seo}>
     <div className="bg-black min-h-screen">
     <div className="bg-black px-6 pt-4 mx-auto lg:h-128 pb-12 ">
-    <div className="container">
+    <div className="container mx-auto">
       <div className="w-full px-5 mt-10">
           <h3 className="text-white font-bold text-5xl mb-2 font-sans">Contact</h3>
         </div>
     </div>  
-    	<div className="about container grid md:grid-cols-2 mt-10 mb-10 pb-10">
+    	<div className="container grid md:grid-cols-2 mt-10 mb-10 pb-10 mx-auto">
     		
     		<div className="p-5">
     			
