@@ -66,7 +66,7 @@ const IndexPage = () => {
       </div>
       </div>
       <div className=" bg-black text-center">
- <a className="" href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" ><img src="https://res.cloudinary.com/meshed-nyc/image/upload/v1638289372/197231817_159683919470988_150262458118792007_n_w1remy.png" className="max-w-full"/></a>
+ <a className="" href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" ><img src="https://res.cloudinary.com/meshed-nyc/image/upload/v1638289372/197231817_159683919470988_150262458118792007_n_w1remy.png" className="max-w-full mx-auto"/></a>
       </div>
       <div className="bg-black mb-32">
       <div className="container mx-auto text-center py-10 px-5 bg-black rounded-lg">
