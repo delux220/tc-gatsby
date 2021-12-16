@@ -50,7 +50,7 @@ const IndexPage = () => {
               <img src="/tiktok.svg" className="w-5 mx-auto"/>
               </a>
             </div>
-            <a href="https://www.amazon.com/shop/trixietuzzini" className="hidden md:inline-block px-5 py-5 text-sm text-white no-underline border border-white font-bold rounded-lg hover:text-gray-300 hover:no-underline text-sm">
+            <a href="https://www.amazon.com/shop/trixietuzzini" target="_blank" className="hidden md:inline-block px-5 py-5 text-sm text-white no-underline border border-white font-bold rounded-lg hover:text-gray-300 hover:no-underline text-sm">
                <img src="/amazon.svg" className="w-5 inline mr-3"/>
               CHECK OUT MY AMAZON STORE
             </a>
