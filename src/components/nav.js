@@ -31,7 +31,8 @@ const Nav = () => {
     render={(data) => (
       <div>
         <div className="bg-black pb-14">
-          <nav className="fixed w-full flex items-center justify-between flex-wrap  p-6 bg-black z-40  shadow ">
+          <nav className="fixed w-full  p-6 bg-black z-40  shadow ">
+            <div className="container mx-auto flex items-center justify-between flex-wrap ">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
              
               <Link to="/" className="tracking-wide hover:no-underline hover:text-pink-500 text-gray-500 font-sans font-thin uppercase">{data.strapiGlobal.siteName}</Link>
@@ -44,7 +45,7 @@ const Nav = () => {
            
               <Link to={'/merch'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-sans hover:no-underline hover:text-pink-500">Merch</Link>
               <Link to={'/contact'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-sans hover:no-underline hover:text-pink-500">Contact</Link>
-              <a href="https://www.patreon.com/TrashTalkPodcast" target="_blank"  className="tracking-wide py-2 font-bold uppercase hover:bg-pink-500 bg-white px-3 hidden md:inline text-black rounded-full font-sans hover:text-black hover:no-underline ml-4">Patreon</a>
+              <a href="https://www.patreon.com/TrashTalkPodcast" target="_blank"  className="tracking-wide py-2 font-bold uppercase hover:bg-pink-500 bg-white px-4 hidden md:inline text-black rounded-full font-sans hover:text-black hover:no-underline ml-4">Patreon</a>
 
               <button
                 type="button"
@@ -52,8 +53,8 @@ const Nav = () => {
                 className="md:hidden"
               ><svg className="fill-current h-6 w-6 mr-5" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
               </button>
-              
-            </div>
+              </div>
+              </div>
           </nav>
           {menuOpen&&<div className="fixed bg-black bg-opacity-90 object-right-top w-full  z-50 h-screen">
           <button onClick={() => setMenuOpen(false)} style={{position:'absolute', right: 20, top:10}} className="color-white mt-10 py-3 px-5  bg-gray-50 rounded-full "><span className="text-xl font-bold text-black">&times;</span></button>

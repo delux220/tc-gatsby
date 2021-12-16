@@ -4,7 +4,7 @@ import { StaticQuery, graphql, Link } from "gatsby";
 import Nav from "./nav";
 import Seo from "./seo";
 
-const Layout = ({ children, seo }) => (
+const Layout = ({ children, seo, helloBar }) => (
   <StaticQuery
     query={graphql`
       query {
@@ -27,6 +27,7 @@ const Layout = ({ children, seo }) => (
     `}
     render={(data) => (
       <div className="bg-black">
+
         <Seo seo={seo} />
         <Nav />
         <main className="bg-black">{children}</main>

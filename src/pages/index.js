@@ -29,13 +29,13 @@ const IndexPage = () => {
   }, []);
 
   return (
-    <Layout seo={data.strapiHomepage.seo}>
-      <div className="container flex px-6 pt-4 mx-auto lg:h-128 mb-32">
+    <Layout seo={data.strapiHomepage.seo} helloBar={1}>
+      <div className="container flex px-6 pt-4 mx-auto lg:h-128 mb-12 md:mb-32">
         <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
           <div className=" text-center w-full">
           <h1 className="font-bold font-sans pb-0 mb-0 text-white mt-10 md:mt-0">{data.strapiHero.Title}</h1>
           <h3 className="font-thin uppercase font-sans py-0 my-0 text-gray-400">{data.strapiHero.Subtitle}</h3>
-          <div className="grid grid-cols-4 mt-10">
+          <div className="grid grid-cols-4 mt-8 mb-10 w-64 mx-auto">
             
               <a href={data.strapiSocial.Facebook} className="">
                 <img src="/fb.svg" className="w-5 mx-auto"/>
@@ -50,6 +50,10 @@ const IndexPage = () => {
               <img src="/tiktok.svg" className="w-5 mx-auto"/>
               </a>
             </div>
+            <a href="#" className="hidden md:inline-block px-5 py-5 text-sm text-white no-underline border border-white font-bold rounded-lg hover:text-gray-300 hover:no-underline text-sm">
+               <img src="/amazon.svg" className="w-5 inline mr-3"/>
+              CHECK OUT MY AMAZON STORE
+            </a>
           </div>
         </div>
         <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2 grayscale">
@@ -59,6 +63,12 @@ const IndexPage = () => {
           />
         </div>
           
+      </div>
+      <div className="container mx-auto md:hidden px-5">
+      <a href="https://www.amazon.com/shop/trixietuzzini" target="_blank" className="block text-center mb-10 px-5 py-5 text-sm text-white no-underline border border-white font-bold rounded-lg hover:text-gray-300 hover:no-underline text-sm">
+               <img src="/amazon.svg" className="w-5 inline mr-3"/>
+              CHECK OUT MY AMAZON STORE
+            </a>
       </div>
       <div className="bg-black hidden">
       <div className="container mx-auto text-center py-10 px-5 bg-black rounded-lg">
@@ -70,7 +80,7 @@ const IndexPage = () => {
       </div>
       <div className="bg-black mb-32">
       <div className="container mx-auto text-center py-10 px-5 bg-black rounded-lg">
-        <p className="text-purple-300 mb-10">Please join our Patreon for Trash Talk bonus content.</p>
+        <p className="text-purple-300 mb-10 font-sans">Please join our Patreon for Trash Talk bonus content.</p>
         <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="block md:inline bg-white text-black px-6 font-bold py-3 text-lg rounded-lg font-sans hover:text-white hover:bg-purple-600 hover:no-underline">Join Patreon</a>
       </div>
       </div>
