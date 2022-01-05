@@ -54,6 +54,10 @@ const IndexPage = () => {
                <img src="/amazon.svg" className="w-5 inline mr-3"/>
               CHECK OUT MY AMAZON STORE
             </a>
+            <a href="https://www.cameo.com/trixietuzzini" target="_blank" className="hidden md:inline-block ml-3 px-5 py-5 text-sm text-white no-underline border border-white font-bold rounded-lg hover:text-gray-300 hover:no-underline text-sm">
+               <img src="/cameo.jpg" className="w-5 inline mr-3"/>
+               BOOK ME ON CAMEO
+            </a>
           </div>
         </div>
         <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2 grayscale">
@@ -65,9 +69,16 @@ const IndexPage = () => {
           
       </div>
       <div className="container mx-auto md:hidden px-5">
-      <a href="https://www.amazon.com/shop/trixietuzzini" target="_blank" className="block text-center mb-10 px-5 py-5 text-sm text-white no-underline border border-white font-bold rounded-lg hover:text-gray-300 hover:no-underline text-sm">
+      <a href="https://www.amazon.com/shop/trixietuzzini" target="_blank" className="block text-center mb-5 px-5 py-3 text-sm text-white no-underline border border-white font-bold rounded-lg hover:text-gray-300 hover:no-underline text-sm">
                <img src="/amazon.svg" className="w-5 inline mr-3"/>
               CHECK OUT MY AMAZON STORE
+            </a>
+      </div>
+
+      <div className="container mx-auto md:hidden px-5">
+      <a href="https://www.cameo.com/trixietuzzini" target="_blank" className="block text-center mb-10 px-5 py-3 text-sm text-white no-underline border border-white font-bold rounded-lg hover:text-gray-300 hover:no-underline text-sm">
+              <img src="/cameo.jpg" className="w-5 inline mr-3"/>
+              BOOK ME ON CAMEO
             </a>
       </div>
       <div className="bg-black hidden">
