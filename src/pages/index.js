@@ -97,7 +97,7 @@ const IndexPage = () => {
       </div>
 
       <div className="container mx-auto md:hidden px-5 mb-10">
-      <a href="https://www.cameo.com/trixietuzzini" target="_blank" className="block text-center mb-5 px-5 py-3 text-sm text-white no-underline border border-white font-bold rounded-lg hover:text-gray-300 hover:no-underline text-sm">
+      <a href="https://c8.io/oXGVWL" target="_blank" className="block text-center mb-5 px-5 py-3 text-sm text-white no-underline border border-white font-bold rounded-lg hover:text-gray-300 hover:no-underline text-sm">
                <img src="/byte.svg" className="w-5 inline mr-3"/>
               TRY BYTE: USE CODE TRACEY19
             </a>
