@@ -185,7 +185,7 @@ const IndexPage = () => {
      <div className="bg-pink-600">
       <div className="container mx-auto pt-10">
       <div className="px-5 md:w-1/2 mx-auto">
-        <h4 className="font-bold font-sans text-white">Subscribe to my mailing list</h4>
+        <h4 className="font-bold font-sans text-white pt-5">Subscribe to my mailing list</h4>
         <p className="text-white text-opacity-60 text-sm">Receive updates on upcoming shows, events, and projects</p>
         <div className="flex items-center  py-2">
           
