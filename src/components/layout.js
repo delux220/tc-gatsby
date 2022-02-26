@@ -63,7 +63,7 @@ const Layout = ({ children, seo, helloBar }) => (
       </div>
       <div className="bg-pink-600">
         <div className="container mx-auto pb-10 text-center">
-          <span className="text-white text-opacity-70">&copy; 2021 Tracey Carnazzo</span>
+          <span className="text-white text-opacity-70">&copy; 2022 Tracey Carnazzo</span>
         </div>
       </div>
      </div>
