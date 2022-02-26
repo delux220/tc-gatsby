@@ -60,10 +60,10 @@ const IndexPage = () => {
                <img src="/cameo.jpg" className="w-5 inline mr-3"/>
                BOOK ME ON CAMEO
             </a>
-            <a href="https://c8.io/oXGVWL" target="_blank" className="col-span-2 hidden md:inline-block px-5 py-3 text-sm text-white no-underline border border-white font-bold rounded-lg hover:text-gray-300 hover:no-underline text-sm">
+            {/*<a href="https://c8.io/oXGVWL" target="_blank" className="col-span-2 hidden md:inline-block px-5 py-3 text-sm text-white no-underline border border-white font-bold rounded-lg hover:text-gray-300 hover:no-underline text-sm">
                <img src="/byte.svg" className="w-8 inline mr-3"/>
                BYTE: USE CODE TRACEY19
-            </a>
+            </a>*/}
             </div>
           </div>
         </div>
@@ -96,12 +96,12 @@ const IndexPage = () => {
             </a>
       </div>
 
-      <div className="container mx-auto md:hidden px-5 mb-10">
+      {/*<div className="container mx-auto md:hidden px-5 mb-10">
       <a href="https://c8.io/oXGVWL" target="_blank" className="block text-center mb-5 px-5 py-3 text-sm text-white no-underline border border-white font-bold rounded-lg hover:text-gray-300 hover:no-underline text-sm">
                <img src="/byte.svg" className="w-5 inline mr-3"/>
               TRY BYTE: USE CODE TRACEY19
             </a>
-      </div>
+      </div>*/}
       <div className="bg-black hidden">
       <div className="container mx-auto text-center py-10 px-5 bg-black rounded-lg">
         <h3 className="font-sans font-bold text-white">Support Trash Talk on Patreon</h3>
