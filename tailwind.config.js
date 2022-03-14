@@ -4,7 +4,9 @@ module.exports = {
   theme: {
   	fontFamily: {
     		sans: ['"Poppins"', 'sans-serif'],
-    		poppins: ['Poppins', 'sans']
+    		poppins: ['Poppins', 'sans'],
+        smooch: ['"Smooch Sans"', 'sans'],
+        unica: ['"Unica One"', 'sans']
     	},
     extend: {
       fadeIn: "fadeIn 2s ease-in forwards",
@@ -16,7 +18,9 @@ module.exports = {
       },
     	fontFamily: {
     		sans: ['"Poppins"', 'sans-serif'],
-    		poppins: ['Poppins', 'sans']
+    		poppins: ['Poppins', 'sans'],
+        smooch: ['"Smooch Sans"', 'sans'],
+        unica: ['"Unica One"', 'sans']
     	}
     },
   },

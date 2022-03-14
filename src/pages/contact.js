@@ -77,7 +77,7 @@ const ContactPage = () => {
                   setToken(token)
                 }}
               />
-              <button type="submit" className="px-5 py-3 bg-pink-500 text-white rounded">Submit</button>
+              <button type="submit" className="px-5 py-3 bg-pink-500 text-white font-unica uppercase text-lg">Submit</button>
             </form>
           </GoogleReCaptchaProvider>
           </div>
