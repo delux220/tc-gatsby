@@ -59,18 +59,15 @@ const IndexPage = () => {
             </div>
             <a href="#events" className="font-unica hidden md:block px-5 py-3 text-lg bg-pink-600 text-white no-underline border border-pink-600 font-bold hover:text-black hover:no-underline text-sm">SEE UPCOMING SHOWS</a>
             <div className="mt-2 grid grid-cols-2 gap-3">
-            <a href="https://www.amazon.com/shop/trixietuzzini" target="_blank" className="hidden md:inline-block px-5 py-3 font-unica text-lg text-white no-underline border border-white font-bold hover:text-gray-300 hover:no-underline text-sm">
-               <img src="/amazon.svg" className="w-5 inline mr-3"/>
-              MY AMAZON STORE
+            <a href="https://c8.io/oXGVWL" target="_blank" className="hidden md:inline-block px-5 py-3 font-unica text-lg text-white no-underline border border-white font-bold hover:text-gray-300 hover:no-underline text-sm">
+               <img src="/byte.svg" className="w-8 inline mr-3"/>
+               BYTE: USE CODE TRACEY19
             </a>
             <a href="https://www.cameo.com/trixietuzzini" target="_blank" className="hidden md:inline-block px-5 py-3 font-unica text-lg text-white no-underline border border-white font-bold  hover:text-gray-300 hover:no-underline text-sm">
                <img src="/cameo.jpg" className="w-5 inline mr-3"/>
                BOOK ME ON CAMEO
             </a>
-            {<a href="https://c8.io/oXGVWL" target="_blank" className="col-span-2 hidden md:inline-block px-5 py-3 font-unica text-lg text-white no-underline border border-white font-bold hover:text-gray-300 hover:no-underline text-sm">
-               <img src="/byte.svg" className="w-8 inline mr-3"/>
-               BYTE: USE CODE TRACEY19
-            </a>}
+            
             </div>
           </div>
         </div>
@@ -89,12 +86,7 @@ const IndexPage = () => {
       </div>
 
 
-      <div className="container mx-auto md:hidden px-5">
-      <a href="https://www.amazon.com/shop/trixietuzzini" target="_blank" className="block text-center mb-5 px-5 py-3 text-sm text-white no-underline border border-white font-bold  font-unica text-lg hover:text-gray-300 hover:no-underline text-sm">
-               <img src="/amazon.svg" className="w-5 inline mr-3"/>
-              CHECK OUT MY AMAZON STORE
-            </a>
-      </div>
+
 
       <div className="container mx-auto md:hidden px-5">
       <a href="https://www.cameo.com/trixietuzzini" target="_blank" className="block text-center mb-5 px-5 py-3 text-sm text-white no-underline border border-white font-bold  font-unica text-lg hover:text-gray-300 hover:no-underline text-sm">
