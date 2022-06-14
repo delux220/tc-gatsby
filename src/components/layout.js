@@ -43,7 +43,7 @@ const Layout = ({ children, seo, helloBar }) => (
         </div>
         <div className="w-2/3 md:w-1/3 text-white">
         <strong className="block text-white mx-auto block text-center mb-5">Social</strong>
-          <div className="grid grid-cols-4 mt-10">
+          <div className="grid grid-cols-5 mt-10">
             
               <a href={data.strapiSocial.Facebook} className="">
                 <img src="/fb.svg" className="w-5 mx-auto"/>
@@ -56,6 +56,9 @@ const Layout = ({ children, seo, helloBar }) => (
               </a>
               <a href={data.strapiSocial.TikTok} className="">
               <img src="/tiktok.svg" className="w-5 mx-auto"/>
+              </a>
+              <a href='https://www.youtube.com/channel/UCIukjjTBWOoUezT7LMb9ppQ' target="_blank">
+                <img src="/youtube.svg" className="w-5 mx-auto"/>
               </a>
             </div>
         </div>

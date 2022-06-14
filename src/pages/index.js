@@ -42,7 +42,7 @@ const IndexPage = () => {
           <div className=" text-center w-full md:mt-3">
           <h1 className="font-bold font-sans pb-0 mb-0 text-white mt-10 md:mt-0">{data.strapiHero.Title}</h1>
           <h3 className="font-thin uppercase font-sans py-0 my-0 text-gray-400">{data.strapiHero.Subtitle}</h3>
-          <div className="grid grid-cols-4 mt-8 mb-10 w-64 mx-auto">
+          <div className="grid grid-cols-5 mt-8 mb-10 w-64 mx-auto">
             
               <a href={data.strapiSocial.Facebook} className="">
                 <img src="/fb.svg" className="w-5 mx-auto"/>
@@ -55,6 +55,9 @@ const IndexPage = () => {
               </a>
               <a href={data.strapiSocial.TikTok} className="">
               <img src="/tiktok.svg" className="w-5 mx-auto"/>
+              </a>
+              <a href='https://www.youtube.com/channel/UCIukjjTBWOoUezT7LMb9ppQ' target="_blank">
+                <img src="/youtube.svg" className="w-5 mx-auto"/>
               </a>
             </div>
             <a href="#events" className="font-unica hidden md:block px-5 py-3 text-lg bg-pink-600 text-white no-underline border border-pink-600 font-bold hover:text-black hover:no-underline text-sm">SEE UPCOMING SHOWS</a>

@@ -20,7 +20,7 @@ const AboutPage = () => {
     			<div className="text-gray-500 font-sans">
     			<MarkdownView markdown={data.strapiAboutPage.description}/>
     			</div>
-    			<div className="grid grid-cols-4 mt-10">
+    			<div className="grid grid-cols-5 mt-10">
     			
     			<a href={data.strapiSocial.Facebook} className="block mx-auto">
     				<img src="/fb.svg" className="w-5"/>
@@ -34,6 +34,9 @@ const AboutPage = () => {
         		<a href={data.strapiSocial.TikTok} className=" block mx-auto">
     				<img src="/tiktok.svg" className="w-5"/>
         		</a>
+            <a href='https://www.youtube.com/channel/UCIukjjTBWOoUezT7LMb9ppQ' target="_blank" className="block mx-auto">
+                <img src="/youtube.svg" className="w-5"/>
+              </a>
         		</div>
         		<div className="my-20">
         			<Link to={'/'} className="hover:text-white text-gray-500">Back</Link>
