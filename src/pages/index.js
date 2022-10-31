@@ -166,7 +166,7 @@ const IndexPage = () => {
 
             return <div className="grid grid-cols-4 gap-4 mb-5 pb-5 md:border-0" key={`event-${event.id}`}>
               <div className="px-5">
-                <h3 className="text-white font-unica uppercase block mb-0 font-thin">{moment(event.node.startDate).format('MMMM Do')}</h3>
+                <h3 className="text-white font-unica uppercase block mb-0 font-thin">{moment(event.node.startDate).format('MMM Do')}</h3>
                 <span className="text-gray-400 font-thin">{moment(event.node.startDate).format('h:mm a')}</span>
               </div>
               <div className="px-5 col-span-3 md:col-span-2">
@@ -187,7 +187,7 @@ const IndexPage = () => {
      <div className="bg-pink-600">
       <div className="container mx-auto pt-10">
       <div className="px-5 md:w-1/2 mx-auto">
-        <h4 className="font-bold font-sans text-white pt-5">Subscribe to my mailing list</h4>
+        <h4 className="font-bold font-unica text-white pt-5 text-3xl uppercase">Subscribe to my mailing list</h4>
         <p className="text-white text-opacity-60 text-sm">Receive updates on upcoming shows, events, and projects</p>
         <div className="flex items-center  py-2">
           
