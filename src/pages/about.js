@@ -7,7 +7,7 @@ import MarkdownView from 'react-showdown';
 const AboutPage = () => {
   const data = useStaticQuery(query);
 
-  console.log(data);
+  const description = data.strapiAboutPage.description.split("\n");
 
   return (
     <Layout seo={data.strapiHomepage.seo}>
@@ -19,8 +19,10 @@ const AboutPage = () => {
     		</div>
     		<div className=" p-5">
     			<h3 className="text-white font-bold text-5xl mb-5 font-sans">{data.strapiAboutPage.title}</h3>
-    			<div className="text-gray-500 font-sans">
-    			<MarkdownView markdown={data.strapiAboutPage.description} className=" leading-8"/>
+    			<div className="text-gray-500 font-sans leading-8">
+          {
+            description.map((part, i) => <p key={`part-${i}`} className="mb-3">{part}</p>)
+          }
     			</div>
     			<div className="grid grid-cols-5 mt-10">
     			

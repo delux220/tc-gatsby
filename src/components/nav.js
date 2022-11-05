@@ -57,12 +57,12 @@ const Nav = () => {
               </div>
           </nav>
           {menuOpen&&<div className="fixed bg-black bg-opacity-90 object-right-top w-full  z-50 h-screen">
-          <button onClick={() => setMenuOpen(false)} style={{position:'absolute', right: 20, top:10}} className="color-white mt-10 py-1 px-3  bg-gray-50 rounded "><span className="text-xl font-bold text-black">&times;</span></button>
+          <button onClick={() => setMenuOpen(false)} style={{position:'absolute', right: 20, top:10}} className="border border-white mt-10 py-1 px-3  bg-transparent rounded-full "><span className="text-3xl font-medium text-white">&times;</span></button>
            
-          <div className="flex content-center items-center h-full w-full">
+          <div className="flex justify-center items-center h-full w-full">
           <div className="w-full center">
           
-             <ul className="text-center" style={{clear:'both', marginLeft:0, paddingLeft:0}}>
+             <ul className="text-center clear-both px-0 mx-0 " >
                 <li className=" my-10">
                   <Link to={`/`} className="text-2xl font-unica uppercase font-bold text-white hover:text-gray-500 hover:no-underline">
                     Home
