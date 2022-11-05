@@ -7,18 +7,20 @@ import MarkdownView from 'react-showdown';
 const AboutPage = () => {
   const data = useStaticQuery(query);
 
+  console.log(data);
+
   return (
     <Layout seo={data.strapiHomepage.seo}>
     <div className="bg-black min-h-screen">
     <div className="bg-black flex px-6 pt-4 mx-auto lg:h-128 pb-12 ">
     	<div className="about container  mx-auto grid md:grid-cols-2">
     		<div className=" p-5">
-    			<GatsbyImage image={data.strapiAboutPage.photo.localFile.childImageSharp.gatsbyImageData} className="max-w-full"/>
+    			<GatsbyImage alt="Tracey Carnazzo" image={data.strapiAboutPage.photo.localFile.childImageSharp.gatsbyImageData} className="max-w-full"/>
     		</div>
     		<div className=" p-5">
     			<h3 className="text-white font-bold text-5xl mb-5 font-sans">{data.strapiAboutPage.title}</h3>
     			<div className="text-gray-500 font-sans">
-    			<MarkdownView markdown={data.strapiAboutPage.description}/>
+    			<MarkdownView markdown={data.strapiAboutPage.description} className=" leading-8"/>
     			</div>
     			<div className="grid grid-cols-5 mt-10">
     			
