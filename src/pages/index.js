@@ -11,14 +11,21 @@ const IndexPage = () => {
 
   const data = useStaticQuery(query);
 
+  console.log(data);
+
   const [noEvents, setNoEvents] = React.useState(false);
 
   React.useEffect(() => {
 
     var found = false;
 
+
     for(var i = 0; i < data.allStrapiEvent.edges.length; i++) {
+      //console.log(data.allStrapiEvent.edges[i].node.Title);
+     // console.log(moment().unix(), (moment(data.allStrapiEvent.edges[i].node.startDate).subtract(1, 'day').format('MMM DD YYYY') ));
       if (moment().unix() < (moment(data.allStrapiEvent.edges[i].node.startDate).subtract(1, 'day').unix() )) {
+
+
         found = true;
         break;
       }

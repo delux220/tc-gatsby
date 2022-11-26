@@ -18,14 +18,6 @@ const Nav = () => {
         strapiGlobal {
           siteName
         }
-        allStrapiCategory {
-          edges {
-            node {
-              slug
-              name
-            }
-          }
-        }
       }
     `}
     render={(data) => (
