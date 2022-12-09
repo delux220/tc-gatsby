@@ -13,8 +13,10 @@ const MerchPage = () => {
     <div className="bg-black  px-6 pt-4 mx-auto lg:h-128 pb-12 ">
     	<div className="container mx-auto">
         <h3 className="text-white font-sans font-bold mt-10">{data.strapiMerchPage.title}</h3>
-        <div className="text-gray-200 text-center font-sans my-20">
-          <MarkdownView markdown={data.strapiMerchPage.description}/>
+        <div className="text-gray-200 text-left font-sans mt-10 mb-10">
+          <p>To purchase merch, please Venmo <a href="https://venmo.com/u/tracey-carnazzo" className="text-pink-500" target="_blank">@Tracey-Carnazzo</a> with the item names and your address in the notes.</p>
+
+          <p>Stickers are $4. Magnets are $5. Buttons are $5. Pop Socket is $10.</p>
         </div>
       </div>
       <div className="container mx-auto pb-20">
