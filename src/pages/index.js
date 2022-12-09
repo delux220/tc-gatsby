@@ -199,7 +199,7 @@ const IndexPage = () => {
         <div className="flex items-center  py-2">
           
           <input className="font-unica uppercase appearance-none bg-white border-1 w-full text-gray-700 py-3 px-3 leading-tight focus:outline-none" type="email" placeholder="Email Address" name="EMAIL" />
-          <button className="font-unica font-bold uppercase text-md flex-shrink-0 bg-black text-sm border-0 text-white py-3 px-8" type="submit">
+          <button className="font-unica font-bold uppercase text-md flex-shrink-0 bg-black text-sm border-0 text-white py-3 px-6" type="submit">
             Sign Up
           </button>
           
