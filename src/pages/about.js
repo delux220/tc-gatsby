@@ -18,7 +18,7 @@ const AboutPage = () => {
     			<GatsbyImage alt="Tracey Carnazzo" image={data.strapiAboutPage.photo.localFile.childImageSharp.gatsbyImageData} className="max-w-full"/>
     		</div>
     		<div className=" p-5">
-    			<h3 className="text-white font-bold text-5xl mb-5 font-sans">{data.strapiAboutPage.title}</h3>
+    			<h3 className="text-white font-bold text-5xl mb-5 font-unica uppercase">{data.strapiAboutPage.title}</h3>
     			<div className="text-gray-500 font-sans leading-8">
           {
             description.map((part, i) => <p key={`part-${i}`} className="mb-3">{part}</p>)

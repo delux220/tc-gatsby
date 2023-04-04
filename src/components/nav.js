@@ -23,11 +23,11 @@ const Nav = () => {
     render={(data) => (
       <div>
         <div className="bg-black pb-14">
-          <nav className="fixed w-full  p-6 bg-black z-40  shadow ">
+          <nav className={`${menuOpen?'':'bg-black'} fixed w-full  p-6  z-50 `}>
             <div className="container mx-auto flex items-center justify-between flex-wrap ">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
              
-              <Link to="/" className="tracking-wide hover:no-underline hover:text-pink-500 text-lg  text-gray-500 font-unica font-thin uppercase">{data.strapiGlobal.siteName}</Link>
+              <Link to="/" className="tracking-wide hover:no-underline hover:text-pink-500 text-xl  text-gray-500 font-unica font-thin uppercase">{data.strapiGlobal.siteName}</Link>
                
             </div>
             <div className="">
@@ -39,19 +39,18 @@ const Nav = () => {
               <Link to={'/contact'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-unica  text-lg hover:no-underline hover:text-pink-500">Contact</Link>
               <a href="https://www.patreon.com/TrashTalkPodcast" target="_blank"  className="tracking-wide py-2 font-bold uppercase hover:bg-pink-500 bg-white px-3 hidden md:inline text-black rounded-md font-unica  text-lg hover:text-black hover:no-underline ml-4">Patreon</a>
 
-              <button
-                type="button"
-                onClick={() => setMenuOpen(!menuOpen)}
-                className="md:hidden mr-0 p-0"
-              ><svg className="fill-current h-6 w-6 " viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg"><title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+              <button id="nav-icon3" className={` md:hidden ${menuOpen&&'open'}`} onClick={() => setMenuOpen(!menuOpen)}>
+                <span className={menuOpen?'bg-white':'bg-white'}></span>
+                <span className={menuOpen?'bg-white':'bg-white'}></span>
+                <span className={menuOpen?'bg-white':'bg-white'}></span>
+                <span className={menuOpen?'bg-white':'bg-white'}></span>
               </button>
               </div>
               </div>
           </nav>
-          {menuOpen&&<div className="fixed bg-black bg-opacity-90 object-right-top w-full  z-50 h-screen">
-          <button onClick={() => setMenuOpen(false)} style={{position:'absolute', right: 20, top:10}} className="border border-white mt-10 py-1 px-3  bg-transparent rounded-full "><span className="text-3xl font-medium text-white">&times;</span></button>
-           
-          <div className="flex justify-center items-center h-full w-full">
+          {menuOpen&&<div className="fixed bg-black/30 backdrop-blur-lg object-right-top w-full  z-40 h-screen">
+          
+          <div className="flex justify-center items-center h-full w-full motion-safe:animate-menuIn">
           <div className="w-full center">
           
              <ul className="text-center clear-both px-0 mx-0 " >
@@ -84,7 +83,7 @@ const Nav = () => {
 
               </ul>
               <div className="mx-auto mt-20 w-96 text-center">
-              <div className="grid grid-cols-4 mt-10">
+              <div className="grid grid-cols-5 mt-10">
           <div className="block">
           <a href={data.strapiSocial.Facebook} className="w-5 text-center hover:text-gray-500">
             <img src="/fb.svg" className="w-5 m-0 mx-auto"/>
@@ -98,6 +97,9 @@ const Nav = () => {
             </a>
             <a href={data.strapiSocial.TikTok} className=" hover:text-gray-500">
             <img src="/tiktok.svg" className="w-5 mx-auto"/>
+            </a>
+            <a href='https://www.youtube.com/channel/UCIukjjTBWOoUezT7LMb9ppQ' target="_blank">
+              <img src="/youtube.svg" className="w-5 mx-auto"/>
             </a>
             </div>
             </div>

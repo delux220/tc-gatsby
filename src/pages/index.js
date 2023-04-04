@@ -47,9 +47,9 @@ const IndexPage = () => {
       <div className="container md:flex px-6 pt-4 mx-auto lg:h-128 mb-12 md:mb-32">
         <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
           <div className=" text-center w-full md:mt-3">
-          <h1 className="font-bold font-sans pb-0 mb-0 text-white mt-10 md:mt-0">{data.strapiHero.Title}</h1>
-          <h3 className="font-thin uppercase font-sans py-0 my-0 text-gray-400">{data.strapiHero.Subtitle}</h3>
-          <div className="grid grid-cols-5 mt-8 mb-10 w-64 mx-auto">
+          <h1 className="font-bold font-sans pb-0 mb-0 text-white mt-10 md:mt-0 mb-3">{data.strapiHero.Title}</h1>
+          <span className="block font-thin uppercase text-xl font-sans py-0 my-0 text-gray-400">{data.strapiHero.Subtitle}</span>
+          <div className="grid grid-cols-5 mt-5 md:mt-8 mb-10 w-64 mx-auto">
             
               <a href={data.strapiSocial.Facebook} className="">
                 <img src="/fb.svg" className="w-5 mx-auto"/>
@@ -67,13 +67,13 @@ const IndexPage = () => {
                 <img src="/youtube.svg" className="w-5 mx-auto"/>
               </a>
             </div>
-            <a href="#events" className="font-unica hidden md:block px-5 py-3 text-lg bg-pink-600 text-white no-underline border border-pink-600 font-bold hover:text-black hover:no-underline text-sm">SEE UPCOMING SHOWS</a>
+            <a href="#events" className="font-unica hidden md:block px-5 py-3 text-lg bg-pink-600 text-white no-underline border border-pink-600 font-bold hover:text-black hover:no-underline text-sm md:text-lg">SEE UPCOMING SHOWS</a>
             <div className="mt-2 grid grid-cols-2 gap-3">
-            <a href="https://c8.io/oXGVWL" target="_blank" className="hidden md:inline-block px-5 py-3 font-unica text-lg text-white no-underline border border-white font-bold hover:text-gray-300 hover:no-underline text-sm">
+            <a href="https://c8.io/oXGVWL" target="_blank" className="hidden md:inline-block px-5 py-3 font-unica text-lg text-white no-underline border border-white font-bold hover:text-gray-300 hover:no-underline text-lg">
                <img src="/byte.svg" className="w-8 inline mr-3"/>
                BYTE: USE CODE TRACEY19
             </a>
-            <a href="https://www.cameo.com/trixietuzzini" target="_blank" className="hidden md:inline-block px-5 py-3 font-unica text-lg text-white no-underline border border-white font-bold  hover:text-gray-300 hover:no-underline text-sm">
+            <a href="https://www.cameo.com/trixietuzzini" target="_blank" className="hidden md:inline-block px-5 py-3 font-unica text-lg text-white no-underline border border-white font-bold  hover:text-gray-300 hover:no-underline  text-lg">
                <img src="/cameo.jpg" className="w-5 inline mr-3"/>
                BOOK ME ON CAMEO
             </a>
@@ -81,7 +81,7 @@ const IndexPage = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2 grayscale">
+        <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2 ">
           <img
             src={data.strapiHero.Image.localFile.publicURL}
             alt={`Hero image`} className="block mt-10"
@@ -89,8 +89,8 @@ const IndexPage = () => {
         </div>
           
       </div>
-      <div className="container mx-auto md:hidden px-5">
-      <a href="#events" className="block text-center mb-5 px-5 py-3 text-sm text-white no-underline border border-pink-600 bg-pink-600 font-bold font-unica text-lg hover:text-gray-300 hover:no-underline text-sm">
+      <div className="container mx-auto md:hidden px-5 mb-3">
+      <a href="#events" className="block text-center px-5 py-3 text-white no-underline border border-pink-600 bg-pink-600 font-bold font-unica text-lg hover:text-gray-300 hover:no-underline ">
               COME SEE MY UPCOMING SHOWS
             </a>
       </div>
@@ -98,15 +98,15 @@ const IndexPage = () => {
 
 
 
-      <div className="container mx-auto md:hidden px-5">
-      <a href="https://www.cameo.com/trixietuzzini" target="_blank" className="block text-center mb-5 px-5 py-3 text-sm text-white no-underline border border-white font-bold  font-unica text-lg hover:text-gray-300 hover:no-underline text-sm">
+      <div className="container mx-auto md:hidden px-5 mb-3">
+      <a href="https://www.cameo.com/trixietuzzini" target="_blank" className="block text-center  px-5 py-3  text-white no-underline border border-white font-bold  font-unica text-lg hover:text-gray-300 hover:no-underline">
               <img src="/cameo.jpg" className="w-5 inline mr-3"/>
               BOOK ME ON CAMEO
             </a>
       </div>
 
       {<div className="container mx-auto md:hidden px-5 mb-10">
-      <a href="https://c8.io/oXGVWL" target="_blank" className="block text-center mb-5 px-5 py-3 text-sm text-white no-underline border border-white font-bold  font-unica text-lg hover:text-gray-300 hover:no-underline text-sm">
+      <a href="https://c8.io/oXGVWL" target="_blank" className="block text-center mb-5 px-5 py-3 text-white no-underline border border-white font-bold  font-unica text-lg hover:text-gray-300 hover:no-underline">
                <img src="/byte.svg" className="w-5 inline mr-3"/>
               TRY BYTE: USE CODE TRACEY19
             </a>
@@ -195,11 +195,11 @@ const IndexPage = () => {
       <div className="container mx-auto pt-10">
       <div className="px-5 md:w-1/2 mx-auto">
         <h4 className="font-bold font-unica text-white pt-5 text-3xl uppercase">Subscribe to my mailing list</h4>
-        <p className="text-white text-opacity-60 text-sm">Receive updates on upcoming shows, events, and projects</p>
-        <div className="flex items-center  py-2">
+        <p className="text-white text-opacity-60 text-sm mt-0 mb-5">Receive updates on upcoming shows, events, and projects</p>
+        <div className="grid grid-cols-5  py-2">
           
-          <input className="font-unica uppercase appearance-none bg-white border-1 w-full text-gray-700 py-3 px-3 leading-tight focus:outline-none" type="email" placeholder="Email Address" name="EMAIL" />
-          <button className="font-unica font-bold uppercase text-md flex-shrink-0 bg-black text-sm border-0 text-white py-3 px-6" type="submit">
+          <input className="font-unica col-span-3 md:col-span-4 uppercase appearance-none bg-white border w-full h-full text-gray-700 py-3 px-3 focus:outline-none" type="email" placeholder="Email Address" name="EMAIL" />
+          <button className="font-unica font-bold col-span-2 md:col-span-1 uppercase flex-shrink-0 bg-black  text-white py-3 px-6" type="submit">
             Sign Up
           </button>
           

@@ -44,13 +44,13 @@ const ContactPage = () => {
     <div className="bg-black min-h-screen">
     <div className="bg-black px-6 pt-4 mx-auto lg:h-128 pb-12 ">
     <div className="container mx-auto">
-      <div className="w-full px-5 mt-10">
-          <h3 className="text-white font-bold text-5xl mb-2 font-sans">Contact</h3>
+      <div className="w-full mt-10">
+          <h3 className="text-white font-bold text-5xl mb-2 font-unica uppercase">Contact</h3>
         </div>
     </div>  
-    	<div className="container grid md:grid-cols-2 mt-10 mb-10 pb-10 mx-auto">
-    		
-    		<div className="p-5">
+    	<div className="container grid md:grid-cols-2 mb-10 pb-10 mx-auto">
+    		<div>
+    		<div className="">
     			
     			<div className="text-gray-500 font-sans">
     			<div className="mb-5 mt-2">
@@ -58,15 +58,15 @@ const ContactPage = () => {
           </div>
     			</div>
           </div>
-          <div className="p-5 ">
+          <div className="">
 
           <GoogleReCaptchaProvider reCaptchaKey="6LdAVE4aAAAAAPyM7L_vk75OdGVaA7-dc8Lmokqb">
             <form action="https://getform.io/f/6b777d54-32b6-45e6-bb0a-1dfa5ba1d8bd" method="post" target="_blank" onSubmit={validate}>
-              <label className="font-sans text-sm text-pink-400 mt-3">Full Name</label>
+              <label className="font-sans text-sm text-gray-100 mt-3">Full Name</label>
               <input type="text" name="name" className="p-3 bg-white font-sans block w-full mb-5"  placeholder="" onChange={(e) => setName(e.value)} value={name}/>
-              <label className="font-sans text-sm text-pink-400 mt-3">Email Address</label>
+              <label className="font-sans text-sm text-gray-100 mt-3">Email Address</label>
               <input type="email" name="email" className="p-3 bg-white font-sans block w-full mb-5"  placeholder="" onChange={(e) => setEmail(e.value)} value={email}/>
-              <label className="font-sans text-sm text-pink-400 mt-3" >Message</label>
+              <label className="font-sans text-sm text-gray-100 mt-3" >Message</label>
               <textarea className="p-3 bg-white w-full mb-5" rows="4" name="message" placeholder="Hello, and pleased to meet you!"  onChange={(e) => setMessage(e.value)} value={message}></textarea>
               <input type="hidden" name="g-recaptcha-response" value={token} />
               {
@@ -77,11 +77,11 @@ const ContactPage = () => {
                   setToken(token)
                 }}
               />
-              <button type="submit" className="px-5 py-3 bg-pink-500 text-white font-unica uppercase text-lg">Submit</button>
+              <button type="submit" className="px-5 block md:inline-block w-full md:w-auto py-3 bg-pink-500 text-white font-unica uppercase text-lg">Submit</button>
             </form>
           </GoogleReCaptchaProvider>
           </div>
-        		
+        	</div>
     		
     	</div>
       <div className="my-20">
