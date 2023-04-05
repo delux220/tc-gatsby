@@ -33,14 +33,14 @@ const Layout = ({ children, seo, helloBar }) => (
         <main className="bg-black">{children}</main>
         <div className="bg-pink-600">
       <div className="container mx-auto px-5 md:px-20 pt-10 pb-10 flex">
-        <div className="w-1/3 text-white hidden sm:block">
+        <div className="w-1/3 text-white hidden">
           <Link to="/" className="block hover:text-black text-white text-sm text-opacity-70 hover:no-underline">Home</Link>
           <Link to="/about" className="block hover:text-black text-sm  text-white text-opacity-70 hover:no-underline">About</Link>
           <Link to="/merch" className="block hover:text-black text-sm  text-white text-opacity-70 hover:no-underline">Merch</Link>
           <Link to="/contact" className="block hover:text-black text-sm  text-white text-opacity-70 hover:no-underline">Contact</Link>
           <a href="https://www.patreon.com/TrashTalkPodcast" target="_blank" className="block hover:text-black text-white text-opacity-70 hover:no-underline text-sm ">Patreon</a>
         </div>
-        <div className="w-full md:w-1/3 text-white">
+        <div className="max-w-2xl w-full text-white mx-auto">
           <div className="grid grid-cols-5 pt-2">
             
               <a href={data.strapiSocial.Facebook} className="">
@@ -64,7 +64,9 @@ const Layout = ({ children, seo, helloBar }) => (
       </div>
       <div className="bg-pink-600">
         <div className="container mx-auto pb-5 text-center">
-          <span className="text-white text-opacity-70 text-sm">&copy; {new Date().getFullYear()} Tracey Carnazzo</span>
+          <span className="text-white text-opacity-70 text-sm  mb-1 block">&copy; {new Date().getFullYear()} Tracey Carnazzo. All Rights Reserved.</span>
+          
+          <a href="https://bageldog.dev/" className=" block text-sm text-white/70 hover:text-white " target="_blank">Site design by <span className="text-white font-bold">bageldog.dev</span></a>
         </div>
       </div>
      </div>
