@@ -173,14 +173,14 @@ const IndexPage = () => {
 
             return <div className="grid grid-cols-7 md:grid-cols-4 xl:grid-cols-7 gap-1 md:gap-4 mb-5 pb-5 md:border-0" key={`event-${event.id}`}>
               <div className="col-span-2 md:col-span-1 xl:col-span-2">
-              <span className="pt-0 text-white font-unica uppercase block text-6xl font-bold mb-0 sm:hidden tracking-wider">{moment(event.node.startDate).format('ddd')}&nbsp;</span>
-                <span className="text-white text-2xl sm:text-3xl font-unica uppercase block mb-0 font-thin mt-0"><span className="hidden sm:inline font-bold">{moment(event.node.startDate).format('ddd')}&nbsp;</span>{moment(event.node.startDate).format('MMM Do')}</span>
+              <span className="pt-0 text-white font-unica uppercase block text-3xl font-bold mb-0 sm:hidden tracking-widest">{moment(event.node.startDate).format('ddd')}&nbsp;</span>
+                <span className="text-white text-xl sm:text-3xl font-unica uppercase block mb-0 font-thin mt-0"><span className="hidden sm:inline font-bold">{moment(event.node.startDate).format('ddd')}&nbsp;</span>{moment(event.node.startDate).format('MMM Do')}</span>
                 
-                <span className="text-gray-100 font-unica text-2xl  font-bold block">{moment(event.node.startDate).tz('America/New_York').format('h:mm a')} {}</span>
+                <span className="text-gray-100 font-unica text-xl  font-bold block">{moment(event.node.startDate).tz('America/New_York').format('h:mm a')} {}</span>
                 
               </div>
               <div className="pl-4 sm:pl-0 col-span-5 md:col-span-2 xl:col-span-4">
-                <span className="pt-0 text-white font-unica uppercase block text-3xl font-bold mb-0 block">{event.node.title}</span>
+                <span className="pt-0 text-white font-unica uppercase block text-xl font-bold mb-0 block">{event.node.title}</span>
                 <span className="text-gray-400 block mb-1">{event.node.venueName}</span>
                 <span className="text-gray-400 block">{event.node.venueAddress}</span>
 
