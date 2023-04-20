@@ -180,7 +180,7 @@ const IndexPage = () => {
                 
               </div>
               <div className="pl-4 sm:pl-0 col-span-5 md:col-span-2 xl:col-span-4">
-                <span className="pt-0 text-white font-unica uppercase block text-xl font-bold mb-0 block">{event.node.title}</span>
+                <span className="pt-0 text-white font-unica uppercase block text-xl sm:text-3xl font-bold mb-0 block">{event.node.title}</span>
                 <span className="text-gray-400 block mb-1">{event.node.venueName}</span>
                 <span className="text-gray-400 block">{event.node.venueAddress}</span>
 
