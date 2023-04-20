@@ -160,7 +160,7 @@ const IndexPage = () => {
      <div className="bg-black" id="events">
       <div className="container mx-auto py-20 px-5 md:px-0">
         <div className="text-center">
-          <h3 className="font-sans font-bold text-white mb-20">Upcoming Comedy Shows</h3>
+          <h3 className="font-sans font-bold text-white mb-20">Upcoming Shows</h3>
           {noEvents==false?<p className="text-gray-400 mb-20 font-sans hidden">Here are some upcoming shows.</p>:<p className="text-gray-400 mb-20 font-sans">Nothing right now. Stay tuned for upcoming shows!</p>}
         </div>
         {
@@ -171,18 +171,21 @@ const IndexPage = () => {
             }
 
 
-            return <div className="grid grid-cols-6 md:grid-cols-4 gap-2 md:gap-4 mb-5 pb-5 md:border-0" key={`event-${event.id}`}>
-              <div className="col-span-2 md:col-span-1">
-                <h3 className="text-white font-unica uppercase block mb-0 font-thin">{moment(event.node.startDate).format('MMM Do')}</h3>
-                <span className="text-gray-100 font-bold text-sm">{moment(event.node.startDate).tz('America/New_York').format('h:mm a')} {}</span>
+            return <div className="grid grid-cols-7 md:grid-cols-4 xl:grid-cols-7 gap-1 md:gap-4 mb-5 pb-5 md:border-0" key={`event-${event.id}`}>
+              <div className="col-span-2 md:col-span-1 xl:col-span-2">
+              <span className="pt-0 text-white font-unica uppercase block text-6xl font-bold mb-0 sm:hidden tracking-wider">{moment(event.node.startDate).format('ddd')}&nbsp;</span>
+                <span className="text-white text-2xl sm:text-3xl font-unica uppercase block mb-0 font-thin mt-0"><span className="hidden sm:inline font-bold">{moment(event.node.startDate).format('ddd')}&nbsp;</span>{moment(event.node.startDate).format('MMM Do')}</span>
+                
+                <span className="text-gray-100 font-unica text-2xl  font-bold block">{moment(event.node.startDate).tz('America/New_York').format('h:mm a')} {}</span>
+                
               </div>
-              <div className=" col-span-4 md:col-span-2">
-                <h3 className="text-white font-unica uppercase block font-bold mb-0">{event.node.title}</h3>
-                <span className="text-gray-400 block">{event.node.venueName}</span>
+              <div className="pl-4 sm:pl-0 col-span-5 md:col-span-2 xl:col-span-4">
+                <span className="pt-0 text-white font-unica uppercase block text-3xl font-bold mb-0 block">{event.node.title}</span>
+                <span className="text-gray-400 block mb-1">{event.node.venueName}</span>
                 <span className="text-gray-400 block">{event.node.venueAddress}</span>
 
               </div>
-              <div className="text-right md:mt-5 w-full col-span-6 md:col-span-1"><a href={event.node.link} target="_blank" className="block text-center w-full md:w-auto md:inline md:mt-10 bg-pink-600 text-white px-6 font-bold py-3 hover:no-underline font-unica uppercase hover:text-black">Details</a></div>
+              <div className="text-right  w-full col-span-7 md:col-span-1"><a href={event.node.link} target="_blank" className="block text-center w-full  bg-pink-600 text-white px-6 font-bold py-3 hover:no-underline font-unica uppercase hover:bg-pink-700 hover:text-white">Details</a></div>
             </div>
           })
         }
