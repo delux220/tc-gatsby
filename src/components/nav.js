@@ -33,8 +33,8 @@ const Nav = () => {
             <div className="">
               <Link to={'/'} className="tracking-wide font-thin hidden md:inline text-white font-unica  text-lg hover:no-underline hover:text-pink-500 uppercase">Home</Link>
               <Link to={'/about'} className="tracking-wide ml-4 font-thin hidden md:inline text-white font-unica  text-lg hover:no-underline hover:text-pink-500 uppercase">About</Link>
-              <Link to={'/#events'} className="ml-4 font-thin hidden md:inline text-white font-unica  text-lg hover:no-underline hover:text-pink-500 uppercase">Events</Link>
-           
+              <Link to={'/#events'} className="ml-4 font-thin hidden md:inline text-white font-unica  text-lg hover:no-underline hover:text-pink-500 uppercase">Shows</Link>
+              
               <Link to={'/merch'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-unica  text-lg hover:no-underline hover:text-pink-500">Merch</Link>
               <Link to={'/contact'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-unica  text-lg hover:no-underline hover:text-pink-500">Contact</Link>
               <a href="https://www.patreon.com/TrashTalkPodcast" target="_blank"  className="tracking-wide py-2 font-bold uppercase hover:bg-pink-500 bg-white px-3 hidden md:inline text-black rounded-md font-unica  text-lg hover:text-black hover:no-underline ml-4">Patreon</a>
@@ -62,6 +62,11 @@ const Nav = () => {
                 <li className=" my-10">
                   <Link to={`/about`} className="text-2xl uppercase font-unica font-bold text-white hover:text-gray-500 hover:no-underline">
                     About
+                  </Link>
+                </li>
+                <li className=" my-10">
+                  <Link to={`/#events`} className="text-2xl uppercase font-unica font-bold text-white hover:text-gray-500 hover:no-underline" onClick={() => setMenuOpen(false)}>
+                    Shows
                   </Link>
                 </li>
                 
