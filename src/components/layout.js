@@ -35,6 +35,7 @@ const Layout = ({ children, seo, helloBar }) => (
       <div className="container mx-auto px-5 md:px-20 pt-10 pb-10 flex">
         <div className="w-1/3 text-white hidden">
           <Link to="/" className="block hover:text-black text-white text-sm text-opacity-70 hover:no-underline">Home</Link>
+          <Link to="/#podcasts" className="block hover:text-black text-white text-sm text-opacity-70 hover:no-underline">Podcasts</Link>
           <Link to="/about" className="block hover:text-black text-sm  text-white text-opacity-70 hover:no-underline">About</Link>
           <Link to="/merch" className="block hover:text-black text-sm  text-white text-opacity-70 hover:no-underline">Merch</Link>
           <Link to="/contact" className="block hover:text-black text-sm  text-white text-opacity-70 hover:no-underline">Contact</Link>

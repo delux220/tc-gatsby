@@ -126,7 +126,7 @@ const IndexPage = () => {
       </div>
       </div>
       
-      <div className=" bg-black">
+      <div className=" bg-black" id="podcasts">
       <div className="container mx-auto pb-0">
 
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-3">
