@@ -139,7 +139,7 @@ const IndexPage = () => {
                 </div>
                 <a href={podcast.node.URL} target="_blank" className="md:w-1/2 block text-center md:inline-block hover:no-underline hover:text-black bg-pink-600 text-white px-6 font-bold py-3 font-unica uppercase">Listen</a>
                 {
-                  podcast.node.FacebookGroupURL!=null&&<a target="_blank" href={podcast.node.FacebookGroupURL} className="hover:no-underline px-6 font-bold py-3 font-unica uppercase md:inline-block md:w-1/2 md:bg-gray-900 block text-center text-gray-300 hover:text-white">Join Group</a>
+                  (podcast.node.FacebookGroupURL!=null&&podcast.node.FacebookGroupURL!='#')&&<a target="_blank" href={podcast.node.FacebookGroupURL} className="hover:no-underline px-6 font-bold py-3 font-unica uppercase md:inline-block md:w-1/2 md:bg-gray-900 block text-center text-gray-300 hover:text-white">Join Group</a>
                 }
               </div>)
           }
