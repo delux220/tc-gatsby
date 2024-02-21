@@ -33,6 +33,8 @@ const Nav = () => {
             <div className="">
               <Link to={'/'} className="tracking-wide font-thin hidden md:inline text-white font-unica  text-lg hover:no-underline hover:text-pink-500 uppercase">Home</Link>
               <Link to={'/about'} className="tracking-wide ml-4 font-thin hidden md:inline text-white font-unica  text-lg hover:no-underline hover:text-pink-500 uppercase">About</Link>
+              <Link to={'/#podcasts'} className="ml-4 font-thin hidden md:inline text-white font-unica  text-lg hover:no-underline hover:text-pink-500 uppercase">Podcasts</Link>
+              
               <Link to={'/#events'} className="ml-4 font-thin hidden md:inline text-white font-unica  text-lg hover:no-underline hover:text-pink-500 uppercase">Shows</Link>
               
               <Link to={'/merch'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-unica  text-lg hover:no-underline hover:text-pink-500">Merch</Link>
@@ -62,6 +64,11 @@ const Nav = () => {
                 <li className=" my-10">
                   <Link to={`/about`} className="text-2xl uppercase font-unica font-bold text-white hover:text-gray-500 hover:no-underline">
                     About
+                  </Link>
+                </li>
+                <li className=" my-10">
+                  <Link to={`/#podcasts`} className="text-2xl uppercase font-unica font-bold text-white hover:text-gray-500 hover:no-underline" onClick={() => setMenuOpen(false)}>
+                    Podcasts
                   </Link>
                 </li>
                 <li className=" my-10">
