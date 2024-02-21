@@ -137,10 +137,14 @@ const IndexPage = () => {
                 <div className="md:h-28">
                 <p className="text-gray-400 font-sans text-sm mb-10">{podcast.node.Description}</p>
                 </div>
-                <a href={podcast.node.URL} target="_blank" className="md:w-1/2 block text-center md:inline-block hover:no-underline hover:text-black bg-pink-600 text-white px-6 font-bold py-3 font-unica uppercase">Listen</a>
+                <div>
                 {
-                  (podcast.node.FacebookGroupURL!=null&&podcast.node.FacebookGroupURL!='#')&&<a target="_blank" href={podcast.node.FacebookGroupURL} className="hover:no-underline px-6 font-bold py-3 font-unica uppercase md:inline-block md:w-1/2 md:bg-gray-900 block text-center text-gray-300 hover:text-white">Join Group</a>
+                  (podcast.node.FacebookGroupURL!=null&&podcast.node.FacebookGroupURL!='#')?<>
+                    <a href={podcast.node.URL} target="_blank" className="md:w-1/2 block text-center md:inline-block hover:no-underline hover:text-black bg-pink-600 text-white px-6 font-bold py-3 font-unica uppercase">Listen</a>
+                    <a target="_blank" href={podcast.node.FacebookGroupURL} className="hover:no-underline px-6 font-bold py-3 font-unica uppercase md:inline-block md:w-1/2 md:bg-gray-900 block text-center text-gray-300 hover:text-white">Join Group</a>
+                    </>:<a href={podcast.node.URL} target="_blank" className="w-full block text-center md:inline-block hover:no-underline hover:text-black bg-pink-600 text-white px-6 font-bold py-3 font-unica uppercase">Listen</a>
                 }
+                </div>
               </div>)
           }
 
