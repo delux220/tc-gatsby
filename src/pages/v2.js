@@ -45,29 +45,30 @@ const IndexPage = () => {
 
   return (
     <Layout seo={data.strapiHomepage.seo} helloBar={1}>
-      <div className="h-screen">
+      <div className="h-[90vh] relative">
       <div className="container mx-auto grid grid-cols-7 h-[80%] pt-10">
         <div className="text-center col-span-3 flex items-center">
           <div>
             <img src="https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg" className="w-full mb-8"/>
             <h1 className="font-bold text-6xl uppercase font-unica pb-0 mb-0 text-white mt-10 md:mt-0 mb-3">{data.strapiHero.Title}</h1>
-            <div className="flex items-center justify-center space-x-10">
+            <div className="flex items-center justify-center space-x-10 mb-4">
               <a href={data.strapiSocial.Facebook} className="">
-                <img src="/fb.svg" className="w-5 mx-auto"/>
+                <img src="/_fb.svg" className="w-5 mx-auto fill-teal-600 text-teal-600"/>
               </a>
               <a href={data.strapiSocial.Twitter} className="inline">
-              <img src="/twitter.svg" className="w-5 mx-auto"/>
+              <img src="/x.svg" className="w-5 mx-auto"/>
               </a>
               <a href={data.strapiSocial.Instagram} className="">
-              <img src="/ig.svg" className="w-5 mx-auto"/>
+              <img src="/_ig.svg" className="w-5 mx-auto"/>
               </a>
               <a href={data.strapiSocial.TikTok} className="">
-              <img src="/tiktok.svg" className="w-5 mx-auto"/>
+              <img src="/_tiktok.svg" className="w-5 mx-auto"/>
               </a>
               <a href='https://www.youtube.com/channel/UCIukjjTBWOoUezT7LMb9ppQ' target="_blank">
-                <img src="/youtube.svg" className="w-5 mx-auto"/>
+                <img src="/_youtube.svg" className="w-5 mx-auto"/>
               </a>
             </div>
+            <a href="#events"  className="md:w-64 block text-center md:inline-block hover:text-black hover:bg-white hover:no-underline hover:text-black bg-pink-600 text-white px-6 font-bold py-3 font-unica uppercase">Upcoming Shows</a>
           </div>
         </div>
         <div className="flex items-center col-span-4">
@@ -84,10 +85,10 @@ const IndexPage = () => {
         </div>
         
       </div>
-      <div className="container mx-auto text-center pt-10">
-        <a href="#events" className="text-white tracking-widest uppercase mx-auto hover:text-purple-300"><span className="block mb-4">Upcoming Shows</span>
-        <ChevronDownIcon className="w-8 h-8 text-white animate-bounce block mx-auto"/>
-        </a>
+      <div className="w-full absolute left-0 bottom-0">
+        
+          <ChevronDownIcon className="w-8 h-8 text-white animate-bounce block mx-auto"/>
+        
       </div>
       </div>
       <div className="container md:flex px-6 pt-4 mx-auto lg:h-128 mb-12 md:mb-32">
@@ -162,7 +163,7 @@ const IndexPage = () => {
       </div>
       </div>
       
-      <div className=" bg-black" id="podcasts">
+      <div className=" bg-black pt-20" id="podcasts">
       <div className="container mx-auto pb-0">
 
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-3">
