@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
 import ArticlesComponent from "../components/articles";
 import moment from 'moment-timezone';
+import { ChevronDownIcon } from '@heroicons/react/24/solid'
 
 const IndexPage = () => {
 
@@ -40,12 +41,59 @@ const IndexPage = () => {
 
   }, []);
 
+  console.log(data.allStrapiPodcasts.edges);
+
   return (
     <Layout seo={data.strapiHomepage.seo} helloBar={1}>
+      <div className="h-screen">
+      <div className="container mx-auto grid grid-cols-7 h-[80%] pt-10">
+        <div className="text-center col-span-3 flex items-center">
+          <div>
+            <img src="https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg" className="w-full mb-8"/>
+            <h1 className="font-bold text-6xl uppercase font-unica pb-0 mb-0 text-white mt-10 md:mt-0 mb-3">{data.strapiHero.Title}</h1>
+            <div className="flex items-center justify-center space-x-10">
+              <a href={data.strapiSocial.Facebook} className="">
+                <img src="/fb.svg" className="w-5 mx-auto"/>
+              </a>
+              <a href={data.strapiSocial.Twitter} className="inline">
+              <img src="/twitter.svg" className="w-5 mx-auto"/>
+              </a>
+              <a href={data.strapiSocial.Instagram} className="">
+              <img src="/ig.svg" className="w-5 mx-auto"/>
+              </a>
+              <a href={data.strapiSocial.TikTok} className="">
+              <img src="/tiktok.svg" className="w-5 mx-auto"/>
+              </a>
+              <a href='https://www.youtube.com/channel/UCIukjjTBWOoUezT7LMb9ppQ' target="_blank">
+                <img src="/youtube.svg" className="w-5 mx-auto"/>
+              </a>
+            </div>
+          </div>
+        </div>
+        <div className="flex items-center col-span-4">
+        <a href="#podcasts" className="grid sm:grid-cols-1 lg:grid-cols-3 gap-1 ">
+          {
+            data.allStrapiPodcasts.edges.map((podcast, i) => <div className="" key={`podcast-${i}`}>
+                <GatsbyImage image={podcast.node.Artwork.localFile.childImageSharp.gatsbyImageData} className="max-w-full"/>
+                
+              </div>)
+          }
+
+
+        </a>
+        </div>
+        
+      </div>
+      <div className="container mx-auto text-center pt-10">
+        <a href="#events" className="text-white tracking-widest uppercase mx-auto hover:text-purple-300"><span className="block mb-4">Upcoming Shows</span>
+        <ChevronDownIcon className="w-8 h-8 text-white animate-bounce block mx-auto"/>
+        </a>
+      </div>
+      </div>
       <div className="container md:flex px-6 pt-4 mx-auto lg:h-128 mb-12 md:mb-32">
-        <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
+        <div className="flex-col items-center w-full lg:flex-row lg:w-1/2 hidden">
           <div className=" text-center w-full md:mt-3">
-          <h1 className="font-bold font-sans pb-0 mb-0 text-white mt-10 md:mt-0 mb-3">{data.strapiHero.Title}</h1>
+          
           <span className="block font-thin uppercase text-xl font-sans py-0 my-0 text-gray-400">{data.strapiHero.Subtitle}</span>
           <div className="grid grid-cols-5 mt-5 md:mt-8 mb-10 w-64 mx-auto">
             
@@ -66,20 +114,10 @@ const IndexPage = () => {
               </a>
             </div>
             <a href="#events" className="font-unica hidden md:block px-5 py-3 text-lg bg-pink-600 text-white no-underline border border-pink-600 font-bold hover:text-black hover:no-underline text-sm md:text-lg">SEE UPCOMING SHOWS</a>
-            <div className="mt-2 grid grid-cols-2 gap-3">
-            <a href="https://c8.io/oXGVWL" target="_blank" className="hidden md:inline-block px-5 py-3 font-unica text-lg text-white no-underline border border-white font-bold hover:text-gray-300 hover:no-underline text-lg">
-               <img src="/byte.svg" className="w-8 inline mr-3"/>
-               BYTE: USE CODE TRACEY19
-            </a>
-            <a href="https://www.cameo.com/trixietuzzini" target="_blank" className="hidden md:inline-block px-5 py-3 font-unica text-lg text-white no-underline border border-white font-bold  hover:text-gray-300 hover:no-underline  text-lg">
-               <img src="/cameo.jpg" className="w-5 inline mr-3"/>
-               BOOK ME ON CAMEO
-            </a>
             
-            </div>
           </div>
         </div>
-        <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2 ">
+        <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2 hidden">
           <img
             src={data.strapiHero.Image.localFile.publicURL}
             alt={`Hero image`} className="block mt-10"
@@ -247,7 +285,7 @@ const query = graphql`
         }
       }
     }
-    allStrapiPodcasts {
+    allStrapiPodcasts(sort: {fields: Sort, order: ASC}) {
       edges {
         node {
           id

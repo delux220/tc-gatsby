@@ -11,8 +11,13 @@ module.exports = {
       animation: {
       fadeIn: "fadeIn 2s ease-in forwards",
       menuIn: "menuDown .2s ease-in forwards",
+      rotate: "rotate .1s ease-in forwards"
       },
       keyframes: {
+        rotate: {
+          "0%": {transform: 'scale(0.8) translate(100px, 100px) rotate(2deg)', opacity: 0},
+          "100%": {transform: 'scale(1) translate(0, 0) rotate(0deg)', opacity: 1}
+        },
         fadeIn: {
           "0%": { opacity: 0 },
           "100%": { opacity: 1 }
