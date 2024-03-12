@@ -51,7 +51,7 @@ const IndexPage = () => {
             <h1 className="font-bold -mt-6 md:mt-0 text-5xl md:text-6xl uppercase font-unica pb-0 mb-0 text-white mt-10 md:mt-0 mb-3">{data.strapiHero.Title}</h1>
             <div>
             <strong className="text-white text-sm font-unica mb-2 uppercase text-center block md:hidden">Follow me on Social Media</strong>
-            <div className="flex items-center justify-between px-4 md:px-0 md:justify-center md:space-x-10 mb-2">
+            <div className="flex items-center justify-between px-4 md:px-0 md:justify-center md:space-x-10 mb-0 md:mb-4">
               <a href={data.strapiSocial.Facebook} className="">
                 <img src="/facebook.png" className="w-5 mx-auto fill-teal-600 text-teal-600"/>
               </a>
