@@ -27,7 +27,7 @@ const Nav = () => {
             <div className="container mx-auto flex items-center justify-between flex-wrap ">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
              
-              <Link to="/" className="tracking-wide hover:no-underline hover:text-pink-500 text-xl  text-gray-500 font-unica font-thin uppercase">{data.strapiGlobal.siteName}</Link>
+              <Link to="/" className="hidden md:block tracking-wide hover:no-underline hover:text-pink-500 text-xl  text-gray-500 font-unica font-thin uppercase">{data.strapiGlobal.siteName}</Link>
                
             </div>
             <div className="">
