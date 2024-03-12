@@ -46,9 +46,10 @@ const IndexPage = () => {
       <div className="md:h-[90vh] relative">
       <div className="md:block container h-full mx-auto md:grid grid-cols-7 md:h-[80%] pt-10">
         <div className="text-center col-span-3 md:flex items-center h-[50%] md:h-auto">
-          <div className="md:h-auto flex justify-center flex-col overflow-hidden">
-            <img src="https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg" className="block mx-auto w-[280px] md:w-full md:mb-8"/>
+          <div className="md:h-auto flex justify-end flex-col overflow-hidden bg-[url(https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg)] h-[50vh] md:bg-none bg-contain bg-no-repeat bg-bottom-center">
+            <img src="https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg" className="hidden md:block mx-auto w-[280px] md:w-full md:mb-8"/>
             <h1 className="font-bold -mt-4 md:mt-0 text-5xl md:text-6xl uppercase font-unica pb-0 mb-0 text-white mt-10 md:mt-0 mb-3">{data.strapiHero.Title}</h1>
+            <strong className="text-white text-sm font-unica mb-4 uppercase text-center block md:hidden">Follow me on Social Media</strong>
             <div className="flex items-center justify-between px-4 md:px-0 md:justify-center md:space-x-10 mb-4">
               <a href={data.strapiSocial.Facebook} className="">
                 <img src="/facebook.png" className="w-5 mx-auto fill-teal-600 text-teal-600"/>
