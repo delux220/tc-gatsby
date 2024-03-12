@@ -4,7 +4,7 @@ import Layout from "../components/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
 import ArticlesComponent from "../components/articles";
 import moment from 'moment-timezone';
-import { ChevronDownIcon } from '@heroicons/react/24/solid'
+import { ChevronDownIcon, ArrowRightIcon } from '@heroicons/react/24/solid'
 
 const IndexPage = () => {
 
@@ -67,7 +67,7 @@ const IndexPage = () => {
                 <img src="/_youtube.png" className="w-5 mx-auto"/>
               </a>
             </div>
-            <a href="#events"  className="w-full md:w-64 block text-center mx-auto hover:text-black hover:bg-white hover:no-underline hover:text-black bg-pink-600 text-white px-6 font-bold py-3 font-unica uppercase">Upcoming Shows</a>
+            <a href="#events"  className="w-full md:w-64 text-2xl md:text-base flex items-center justify-center space-x-2 md:block text-center mx-auto md:hover:text-black md:hover:bg-white hover:no-underline hover:text-white bg-transparent md:bg-pink-600 text-pink-400 md:text-white px-6 font-bold py-4 md:py-3 font-unica uppercase"><ArrowRightIcon className="w-5 h-5 md:hidden"/><span>Upcoming Shows</span></a>
           </div>
         </div>
         <div className="md:flex items-center col-span-4">
@@ -125,12 +125,7 @@ const IndexPage = () => {
         </div>
           
       </div>
-      <div className="container mx-auto md:hidden px-5 mb-3">
-      <a href="#events" className="block text-center px-5 py-3 text-white no-underline border border-pink-600 bg-pink-600 font-bold font-unica text-lg hover:text-gray-300 hover:no-underline ">
-              COME SEE MY UPCOMING SHOWS
-            </a>
-      </div>
-
+      
       
       <div className="bg-black hidden">
       <div className="container mx-auto text-center py-10 px-5 bg-black rounded-lg">
