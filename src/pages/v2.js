@@ -44,11 +44,12 @@ const IndexPage = () => {
   return (
     <Layout seo={data.strapiHomepage.seo} helloBar={1}>
       <div className="md:h-[90vh] relative">
-      <div className="md:block container h-full mx-auto md:grid grid-cols-7 md:h-[80%] pt-10">
+      <div className="md:block container h-full mx-auto md:grid grid-cols-7 md:h-[80%] md:pt-10">
         <div className="text-center col-span-3 md:flex items-center h-[50%] md:h-auto">
-          <div className="md:h-auto flex justify-end flex-col overflow-hidden bg-[url(https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg)] h-[50vh] md:bg-none bg-contain bg-no-repeat bg-bottom-center">
+          <div className="md:h-auto flex justify-between flex-col overflow-hidden bg-[url(https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg)] h-[50vh] md:bg-none bg-contain bg-no-repeat bg-bottom">
             <img src="https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg" className="hidden md:block mx-auto w-[280px] md:w-full md:mb-8"/>
             <h1 className="font-bold -mt-4 md:mt-0 text-5xl md:text-6xl uppercase font-unica pb-0 mb-0 text-white mt-10 md:mt-0 mb-3">{data.strapiHero.Title}</h1>
+            <div>
             <strong className="text-white text-sm font-unica mb-4 uppercase text-center block md:hidden">Follow me on Social Media</strong>
             <div className="flex items-center justify-between px-4 md:px-0 md:justify-center md:space-x-10 mb-4">
               <a href={data.strapiSocial.Facebook} className="">
@@ -68,10 +69,12 @@ const IndexPage = () => {
               </a>
             </div>
             <a href="#events"  className="w-full md:w-64 text-2xl md:text-base flex items-center justify-center space-x-2 md:block text-center mx-auto md:hover:text-black md:hover:bg-white hover:no-underline hover:text-white bg-transparent md:bg-pink-600 text-pink-400 md:text-white px-6 font-bold py-4 md:py-3 font-unica uppercase"><ArrowRightIcon className="w-5 h-5 md:hidden"/><span>Upcoming Shows</span></a>
+            </div>
           </div>
         </div>
-        <div className="md:flex items-center col-span-4">
-        <a href="#podcasts" className="grid  grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 sm:gap-1 ">
+        <div className="md:flex items-center col-span-4 relative">
+        <strong className="font-unica z-10 text-white text-3xl bg-black block border-t border-white md:hidden">PODCASTS</strong>
+        <a href="#podcasts" className="grid  grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 sm:gap-1">
           {
             data.allStrapiPodcasts.edges.map((podcast, i) => <div className="" key={`podcast-${i}`}>
                 <GatsbyImage image={podcast.node.Artwork.localFile.childImageSharp.gatsbyImageData} className="max-w-full"/>
