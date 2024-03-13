@@ -50,7 +50,7 @@ const IndexPage = () => {
             <img src="https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg" className="hidden md:block mx-auto w-[280px] md:w-full md:mb-8"/>
             <h1 className="font-bold -mt-6 md:mt-0 text-5xl md:text-6xl uppercase font-unica pb-0 mb-0 text-white mt-10 md:mt-0 mb-3">{data.strapiHero.Title}</h1>
             <div>
-            <strong className="text-white text-sm font-unica mb-2 uppercase text-center block md:hidden">Follow me on Social Media</strong>
+            <strong className="text-white text-sm font-unica mb-2 uppercase text-center block md:mb-4">Follow me on Social Media</strong>
             <div className="flex items-center justify-between px-4 md:px-0 md:justify-center md:space-x-10 mb-0 md:mb-4">
               <a href={data.strapiSocial.Facebook} className="">
                 <img src="/facebook.png" className="w-5 mx-auto fill-teal-600 text-teal-600"/>
@@ -73,7 +73,8 @@ const IndexPage = () => {
           </div>
         </div>
         <div className="md:flex items-center col-span-4 relative">
-        <strong className="font-unica z-10 text-white text-3xl bg-black block border-t border-white md:hidden">PODCASTS</strong>
+        <div>
+        <strong className="font-unica z-10 text-white text-3xl bg-black block border-t border-white md:border-t-0 ">CHECK OUT MY PODCASTS</strong>
         <a href="#podcasts" className="grid  grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 sm:gap-1">
           {
             data.allStrapiPodcasts.edges.map((podcast, i) => <div className="" key={`podcast-${i}`}>
@@ -84,6 +85,7 @@ const IndexPage = () => {
 
 
         </a>
+        </div>
         </div>
         
       </div>
