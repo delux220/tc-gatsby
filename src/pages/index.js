@@ -4,6 +4,7 @@ import Layout from "../components/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
 import ArticlesComponent from "../components/articles";
 import moment from 'moment-timezone';
+import { ChevronDownIcon, ArrowRightIcon } from '@heroicons/react/24/solid'
 
 const IndexPage = () => {
 
@@ -42,10 +43,63 @@ const IndexPage = () => {
 
   return (
     <Layout seo={data.strapiHomepage.seo} helloBar={1}>
+      <div className="md:h-[90vh] relative">
+      <div className="md:block container h-full mx-auto md:grid grid-cols-7 md:h-[80%] md:pt-10">
+        <div className="text-center col-span-3 md:flex items-center h-[50%] md:h-auto">
+          <div className="md:h-auto flex justify-between flex-col overflow-hidden bg-[url(https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg)] h-[50vh] md:bg-none bg-contain bg-no-repeat bg-bottom">
+            <img src="https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg" className="hidden md:block mx-auto w-[280px] md:w-full md:mb-8"/>
+            <h1 className="font-bold -mt-6 md:mt-0 text-5xl md:text-6xl uppercase font-unica pb-0 mb-0 text-white mt-10 md:mt-0 mb-3">{data.strapiHero.Title}</h1>
+            <div>
+            <strong className="text-white text-sm font-unica mb-2 uppercase text-center block md:mb-4">Follow me on Social Media</strong>
+            <div className="flex items-center justify-between px-4 md:px-0 md:justify-center md:space-x-10 mb-0 md:mb-4">
+              <a href={data.strapiSocial.Facebook} className="">
+                <img src="/facebook.png" className="w-5 mx-auto fill-teal-600 text-teal-600"/>
+              </a>
+              <a href={data.strapiSocial.Twitter} className="inline">
+              <img src="/x.svg" className="w-5 mx-auto"/>
+              </a>
+              <a href={data.strapiSocial.Instagram} className="">
+              <img src="/instagram_icon.png" className="w-5 mx-auto"/>
+              </a>
+              <a href={data.strapiSocial.TikTok} className="">
+              <img src="/tiktok.png" className="w-5 mx-auto"/>
+              </a>
+              <a href='https://www.youtube.com/channel/UCIukjjTBWOoUezT7LMb9ppQ' target="_blank">
+                <img src="/_youtube.png" className="w-5 mx-auto"/>
+              </a>
+            </div>
+            <a href="#events"  className="w-full md:w-64 text-2xl md:text-base flex items-center justify-center space-x-2 md:block text-center mx-auto md:hover:text-black md:hover:bg-white hover:no-underline hover:text-white bg-transparent md:bg-pink-600 text-pink-400 md:text-white px-6 font-bold py-4 md:py-3 font-unica uppercase"><ArrowRightIcon className="w-5 h-5 md:hidden"/><span>Upcoming Shows</span></a>
+            </div>
+          </div>
+        </div>
+        <div className="md:flex items-center col-span-4 relative">
+        <div>
+        <strong className="font-unica z-10 text-white text-3xl bg-black block border-t border-white md:border-t-0 md:hidden">CHECK OUT MY PODCASTS</strong>
+        <a href="#podcasts" className="grid  grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 sm:gap-1">
+          {
+            data.allStrapiPodcasts.edges.map((podcast, i) => <div className="" key={`podcast-${i}`}>
+                <GatsbyImage image={podcast.node.Artwork.localFile.childImageSharp.gatsbyImageData} className="max-w-full"/>
+                
+              </div>)
+          }
+
+
+        </a>
+        <a href="#podcasts" className="hidden font-unica z-10 text-white hover:no-underline  hover:text-black text-2xl bg-pink-600 px-4 py-3 md:block text-center">CHECK OUT MY PODCASTS</a>
+        </div>
+        </div>
+        
+      </div>
+      <div className="w-full absolute left-0 bottom-0 hidden md:block">
+        
+          <ChevronDownIcon className="w-8 h-8 text-white animate-bounce block mx-auto"/>
+        
+      </div>
+      </div>
       <div className="container md:flex px-6 pt-4 mx-auto lg:h-128 mb-12 md:mb-32">
-        <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2">
+        <div className="flex-col items-center w-full lg:flex-row lg:w-1/2 hidden">
           <div className=" text-center w-full md:mt-3">
-          <h1 className="font-bold font-sans pb-0 mb-0 text-white mt-10 md:mt-0 mb-3">{data.strapiHero.Title}</h1>
+          
           <span className="block font-thin uppercase text-xl font-sans py-0 my-0 text-gray-400">{data.strapiHero.Subtitle}</span>
           <div className="grid grid-cols-5 mt-5 md:mt-8 mb-10 w-64 mx-auto">
             
@@ -66,20 +120,10 @@ const IndexPage = () => {
               </a>
             </div>
             <a href="#events" className="font-unica hidden md:block px-5 py-3 text-lg bg-pink-600 text-white no-underline border border-pink-600 font-bold hover:text-black hover:no-underline text-sm md:text-lg">SEE UPCOMING SHOWS</a>
-            <div className="mt-2 grid grid-cols-2 gap-3">
-            <a href="https://c8.io/oXGVWL" target="_blank" className="hidden md:inline-block px-5 py-3 font-unica text-lg text-white no-underline border border-white font-bold hover:text-gray-300 hover:no-underline text-lg">
-               <img src="/byte.svg" className="w-8 inline mr-3"/>
-               BYTE: USE CODE TRACEY19
-            </a>
-            <a href="https://www.cameo.com/trixietuzzini" target="_blank" className="hidden md:inline-block px-5 py-3 font-unica text-lg text-white no-underline border border-white font-bold  hover:text-gray-300 hover:no-underline  text-lg">
-               <img src="/cameo.jpg" className="w-5 inline mr-3"/>
-               BOOK ME ON CAMEO
-            </a>
             
-            </div>
           </div>
         </div>
-        <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2 ">
+        <div className="flex flex-col items-center w-full lg:flex-row lg:w-1/2 hidden">
           <img
             src={data.strapiHero.Image.localFile.publicURL}
             alt={`Hero image`} className="block mt-10"
@@ -87,28 +131,8 @@ const IndexPage = () => {
         </div>
           
       </div>
-      <div className="container mx-auto md:hidden px-5 mb-3">
-      <a href="#events" className="block text-center px-5 py-3 text-white no-underline border border-pink-600 bg-pink-600 font-bold font-unica text-lg hover:text-gray-300 hover:no-underline ">
-              COME SEE MY UPCOMING SHOWS
-            </a>
-      </div>
-
-
-
-
-      <div className="container mx-auto md:hidden px-5 mb-3">
-      <a href="https://www.cameo.com/trixietuzzini" target="_blank" className="block text-center  px-5 py-3  text-white no-underline border border-white font-bold  font-unica text-lg hover:text-gray-300 hover:no-underline">
-              <img src="/cameo.jpg" className="w-5 inline mr-3"/>
-              BOOK ME ON CAMEO
-            </a>
-      </div>
-
-      {<div className="container mx-auto md:hidden px-5 mb-10">
-      <a href="https://c8.io/oXGVWL" target="_blank" className="block text-center mb-5 px-5 py-3 text-white no-underline border border-white font-bold  font-unica text-lg hover:text-gray-300 hover:no-underline">
-               <img src="/byte.svg" className="w-5 inline mr-3"/>
-              TRY BYTE: USE CODE TRACEY19
-            </a>
-      </div>}
+      
+      
       <div className="bg-black hidden">
       <div className="container mx-auto text-center py-10 px-5 bg-black rounded-lg">
         <h3 className="font-sans font-bold text-white">Support Trash Talk on Patreon</h3>
@@ -124,7 +148,7 @@ const IndexPage = () => {
       </div>
       </div>
       
-      <div className=" bg-black" id="podcasts">
+      <div className=" bg-black pt-20" id="podcasts">
       <div className="container mx-auto pb-0">
 
         <div className="grid sm:grid-cols-1 lg:grid-cols-3 gap-3">
@@ -247,7 +271,7 @@ const query = graphql`
         }
       }
     }
-    allStrapiPodcasts {
+    allStrapiPodcasts(sort: {fields: Sort, order: ASC}) {
       edges {
         node {
           id
