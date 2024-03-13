@@ -74,7 +74,7 @@ const IndexPage = () => {
         </div>
         <div className="md:flex items-center col-span-4 relative">
         <div>
-        <strong className="font-unica z-10 text-white text-3xl bg-black block border-t border-white md:border-t-0 ">CHECK OUT MY PODCASTS</strong>
+        <strong className="font-unica z-10 text-white text-3xl bg-black block border-t border-white md:border-t-0 md:hidden">CHECK OUT MY PODCASTS</strong>
         <a href="#podcasts" className="grid  grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 sm:gap-1">
           {
             data.allStrapiPodcasts.edges.map((podcast, i) => <div className="" key={`podcast-${i}`}>
@@ -85,6 +85,7 @@ const IndexPage = () => {
 
 
         </a>
+        <a href="#podcasts" className="hidden font-unica z-10 text-white hover:no-underline  hover:text-black text-2xl bg-pink-600 px-4 py-3 md:block text-center">CHECK OUT MY PODCASTS</a>
         </div>
         </div>
         
