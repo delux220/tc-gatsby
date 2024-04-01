@@ -50,7 +50,7 @@ const IndexPage = () => {
             <img src="https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg" className="hidden md:block mx-auto w-[280px] md:w-full md:mb-8"/>
             <div>
             <h1 className="font-bold -mt-6 md:mt-0 text-5xl md:text-6xl uppercase font-unica pb-0 mb-0 text-white mt-4 md:mt-0 ">{data.strapiHero.Title}</h1>
-            <h3 className="font-thin uppercase text-lg sm:text-xl mb-4 tracking-widest text-white">Comedian and Podcast Host</h3>
+            <h3 className="md:font-thin uppercase text-lg sm:text-xl mt-0 mb-4 tracking-widest text-white">Comedian and Podcast Host</h3>
             </div>
             <div>
             <strong className="text-white text-sm font-unica mb-2 uppercase text-center block md:mb-4">Follow me on Social Media</strong>
