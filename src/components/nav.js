@@ -27,19 +27,19 @@ const Nav = () => {
             <div className="container mx-auto flex items-center justify-between flex-wrap ">
             <div className="flex items-center flex-shrink-0 text-white mr-6">
              
-              <Link to="/" className="hidden md:block tracking-wide hover:no-underline hover:text-pink-500 text-xl  text-gray-500 font-unica font-thin uppercase">{data.strapiGlobal.siteName}</Link>
+              <Link to="/" className="hidden md:block tracking-wide hover:no-underline hover:text-pink-500 text-2xl  text-gray-500 font-unica font-thin uppercase">{data.strapiGlobal.siteName}</Link>
                
             </div>
             <div className="">
-              <Link to={'/'} className="tracking-wide font-thin hidden md:inline text-white font-unica  text-lg hover:no-underline hover:text-pink-500 uppercase">Home</Link>
-              <Link to={'/about'} className="tracking-wide ml-4 font-thin hidden md:inline text-white font-unica  text-lg hover:no-underline hover:text-pink-500 uppercase">About</Link>
-              <Link to={'/#podcasts'} className="ml-4 font-thin hidden md:inline text-white font-unica  text-lg hover:no-underline hover:text-pink-500 uppercase">Podcasts</Link>
+              <Link to={'/'} className="tracking-wide font-thin hidden md:inline text-white font-unica  text-2xl hover:no-underline hover:text-pink-500 uppercase">Home</Link>
+              <Link to={'/about'} className="tracking-wide ml-4 font-thin hidden md:inline text-white font-unica  text-2xl hover:no-underline hover:text-pink-500 uppercase">About</Link>
+              <Link to={'/#podcasts'} className="ml-4 font-thin hidden md:inline text-white font-unica  text-2xl hover:no-underline hover:text-pink-500 uppercase">Podcasts</Link>
               
-              <Link to={'/#events'} className="ml-4 font-thin hidden md:inline text-white font-unica  text-lg hover:no-underline hover:text-pink-500 uppercase">Shows</Link>
+              <Link to={'/#events'} className="ml-4 font-thin hidden md:inline text-white font-unica  text-2xl hover:no-underline hover:text-pink-500 uppercase">Shows</Link>
               
-              <Link to={'/merch'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-unica  text-lg hover:no-underline hover:text-pink-500">Merch</Link>
-              <Link to={'/contact'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-unica  text-lg hover:no-underline hover:text-pink-500">Contact</Link>
-              <a href="https://www.patreon.com/TrashTalkPodcast" target="_blank"  className="tracking-wide py-2 font-bold uppercase hover:bg-pink-500 bg-white px-3 hidden md:inline text-black rounded-md font-unica  text-lg hover:text-black hover:no-underline ml-4">Patreon</a>
+              <Link to={'/merch'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-unica  text-2xl hover:no-underline hover:text-pink-500">Merch</Link>
+              <Link to={'/contact'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-unica  text-2xl hover:no-underline hover:text-pink-500">Contact</Link>
+              <a href="https://www.patreon.com/TrashTalkPodcast" target="_blank"  className="tracking-wide py-2 font-bold uppercase hover:bg-pink-500 bg-white px-3 hidden md:inline text-black rounded-md font-unica  text-2xl hover:text-black hover:no-underline ml-4">Patreon</a>
 
               <button id="nav-icon3" className={` md:hidden ${menuOpen&&'open'}`} onClick={() => setMenuOpen(!menuOpen)}>
                 <span className={menuOpen?'bg-white':'bg-white'}></span>

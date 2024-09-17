@@ -32,7 +32,7 @@ module.exports = {
     		sans: ['"Poppins"', 'sans-serif'],
     		poppins: ['Poppins', 'sans'],
         smooch: ['"Smooch Sans"', 'sans'],
-        unica: ['"Unica One"', 'sans']
+        unica: ['veneer', 'sans']
     	}
     },
   },

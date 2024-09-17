@@ -1,6 +1,7 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+@import url("https://use.typekit.net/cks2buf.css");
 @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;400;700&family=Smooch+Sans:wght@100;300;600&family=Unica+One&display=swap&test=1');
 #nav-icon1, #nav-icon2, #nav-icon3, #nav-icon4 {
   width: 45px;

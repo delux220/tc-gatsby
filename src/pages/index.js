@@ -43,17 +43,17 @@ const IndexPage = () => {
 
   return (
     <Layout seo={data.strapiHomepage.seo} helloBar={1}>
-      <div className="md:h-[90vh] relative">
+      <div className="md:h-[90vh] md:min-h-[600px] lg:min-h-[720px] relative">
       <div className="md:block container h-full mx-auto md:grid grid-cols-7 md:h-[80%] md:pt-10">
         <div className="text-center col-span-3 md:flex items-center h-[50%] md:h-auto">
           <div className="md:h-auto flex justify-between flex-col overflow-hidden bg-[url(https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg)] h-[50vh] md:bg-none bg-contain bg-no-repeat bg-bottom">
             <img src="https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg" className="hidden md:block mx-auto w-[280px]  md:w-[320px] xl:w-full md:mb-8"/>
             <div>
-            <h1 className="font-bold -mt-6 md:mt-0 text-5xl md:text-6xl uppercase font-unica pb-0 mb-0 text-white mt-4 md:mt-0 ">{data.strapiHero.Title}</h1>
-            <h3 className="md:font-thin uppercase text-lg sm:text-xl mt-0 mb-4 tracking-widest text-white">Comedian and Podcast Host</h3>
+            <h1 className="font-bold -mt-6 md:mt-0 text-5xl md:text-6xl uppercase font-unica pb-0 mb-0 text-white mt-4 md:mt-0 tracking-wide">{data.strapiHero.Title}</h1>
+            <h3 className="md:font-thin uppercase text-lg sm:text-xl mt-0 mb-3 md:mb-1 tracking-widest text-white">Comedian and Podcast Host</h3>
             </div>
             <div>
-            <strong className="text-white text-sm font-unica mb-2 uppercase text-center block md:mb-4">Follow me on Social Media</strong>
+            <strong className="text-white text-lg tracking-wider font-unica mb-2 uppercase text-center block md:mb-2">Follow me on Social Media</strong>
             <div className="flex items-center justify-between px-4 md:px-0 md:justify-center md:space-x-10 mb-0 md:mb-4">
               <a href={data.strapiSocial.Facebook} className="">
                 <img src="/facebook.png" className="w-5 mx-auto fill-teal-600 text-teal-600"/>
@@ -71,7 +71,7 @@ const IndexPage = () => {
                 <img src="/_youtube.png" className="w-5 mx-auto"/>
               </a>
             </div>
-            <a href="#events"  className="w-full md:w-64 text-2xl md:text-base flex items-center justify-center space-x-2 md:block text-center mx-auto md:hover:text-black md:hover:bg-white hover:no-underline hover:text-white bg-transparent md:bg-pink-600 text-pink-400 md:text-white px-6 font-bold py-4 md:py-3 font-unica uppercase"><ArrowRightIcon className="w-5 h-5 md:hidden"/><span>Upcoming Shows</span></a>
+            <a href="#events"  className="w-full md:w-64 text-2xl md:text-2xl flex items-center justify-center space-x-2 md:block text-center mx-auto md:hover:text-black md:hover:bg-white hover:no-underline hover:text-white bg-transparent md:bg-pink-600 text-pink-400 md:text-white px-6 font-bold py-4 md:py-3 font-unica uppercase"><ArrowRightIcon className="w-5 h-5 md:hidden"/><span>Upcoming Shows</span></a>
             </div>
           </div>
         </div>
@@ -99,7 +99,7 @@ const IndexPage = () => {
         
       </div>
       </div>
-      <div className="container md:flex px-6 pt-4 mx-auto lg:h-128 mb-12 md:mb-32">
+      <div className="container md:flex px-6 pt-4 mx-auto lg:h-128 mb-12 ">
         <div className="flex-col items-center w-full lg:flex-row lg:w-1/2 hidden">
           <div className=" text-center w-full md:mt-3">
           
@@ -135,6 +135,42 @@ const IndexPage = () => {
           
       </div>
       
+      <div className="bg-black" id="events">
+      <div className="container mx-auto pb-20 px-5 md:px-0">
+        <div className="text-center">
+          <h3 className="font-unica text-4xl  uppercase text-white mb-20">Upcoming Shows</h3>
+          {noEvents==false?<p className="text-gray-400 mb-20 font-sans hidden">Here are some upcoming shows.</p>:<p className="text-gray-400 mb-20 font-sans">Nothing right now. Stay tuned for upcoming shows!</p>}
+        </div>
+        {
+          data.allStrapiEvent.edges.map((event, i) => {
+
+            if (moment().unix() > (moment(event.node.startDate).add(1, 'day').unix() )) {
+              return <div/>;
+            }
+
+
+            return <div className="grid grid-cols-7 md:grid-cols-4 xl:grid-cols-7 gap-1 md:gap-4 mb-5 pb-5 md:border-0" key={`event-${event.id}`}>
+              <div className="col-span-2 md:col-span-1 xl:col-span-2">
+              <span className="pt-0 text-white font-unica uppercase block text-3xl font-bold mb-0 sm:hidden tracking-widest">{moment(event.node.startDate).format('ddd')}&nbsp;</span>
+                <span className="text-white text-xl sm:text-6xl font-unica uppercase block mb-0 mt-0 font-bold"><span className="hidden sm:inline font-bold">{moment(event.node.startDate).format('ddd')}&nbsp;</span>{moment(event.node.startDate).format('MMM D')}</span>
+                
+                <span className="hidden text-gray-100 font-unica text-xl  font-bold block">{moment(event.node.startDate).tz('America/New_York').format('h:mm a')} {}</span>
+                
+              </div>
+              <div className="pl-4 sm:pl-0 col-span-5 md:col-span-2 xl:col-span-4">
+                <span className="pt-0 text-white font-unica uppercase block text-xl sm:text-4xl  mb-0 block">{event.node.title}</span>
+                <span className="text-gray-400 block mb-1">{event.node.venueName} @ {moment(event.node.startDate).tz('America/New_York').format('h:mm a')}</span>
+                <span className="text-gray-400 block hidden">{event.node.venueAddress}</span>
+
+              </div>
+              <div className="text-right  w-full col-span-7 md:col-span-1"><a href={event.node.link} target="_blank" className="block text-center w-full  bg-pink-600 text-white px-6 font-bold py-3 hover:no-underline font-unica uppercase hover:bg-pink-700 hover:text-white">Details</a></div>
+            </div>
+          })
+        }
+
+
+      </div>
+     </div>
       
       <div className="bg-black hidden">
       <div className="container mx-auto text-center py-10 px-5 bg-black rounded-lg">
@@ -186,42 +222,7 @@ const IndexPage = () => {
       </div>
       </div>
       
-     <div className="bg-black" id="events">
-      <div className="container mx-auto py-20 px-5 md:px-0">
-        <div className="text-center">
-          <h3 className="font-sans font-bold text-white mb-20">Upcoming Shows</h3>
-          {noEvents==false?<p className="text-gray-400 mb-20 font-sans hidden">Here are some upcoming shows.</p>:<p className="text-gray-400 mb-20 font-sans">Nothing right now. Stay tuned for upcoming shows!</p>}
-        </div>
-        {
-          data.allStrapiEvent.edges.map((event, i) => {
-
-            if (moment().unix() > (moment(event.node.startDate).add(1, 'day').unix() )) {
-              return <div/>;
-            }
-
-
-            return <div className="grid grid-cols-7 md:grid-cols-4 xl:grid-cols-7 gap-1 md:gap-4 mb-5 pb-5 md:border-0" key={`event-${event.id}`}>
-              <div className="col-span-2 md:col-span-1 xl:col-span-2">
-              <span className="pt-0 text-white font-unica uppercase block text-3xl font-bold mb-0 sm:hidden tracking-widest">{moment(event.node.startDate).format('ddd')}&nbsp;</span>
-                <span className="text-white text-xl sm:text-3xl font-unica uppercase block mb-0 font-thin mt-0"><span className="hidden sm:inline font-bold">{moment(event.node.startDate).format('ddd')}&nbsp;</span>{moment(event.node.startDate).format('MMM Do')}</span>
-                
-                <span className="text-gray-100 font-unica text-xl  font-bold block">{moment(event.node.startDate).tz('America/New_York').format('h:mm a')} {}</span>
-                
-              </div>
-              <div className="pl-4 sm:pl-0 col-span-5 md:col-span-2 xl:col-span-4">
-                <span className="pt-0 text-white font-unica uppercase block text-xl sm:text-3xl font-bold mb-0 block">{event.node.title}</span>
-                <span className="text-gray-400 block mb-1">{event.node.venueName}</span>
-                <span className="text-gray-400 block">{event.node.venueAddress}</span>
-
-              </div>
-              <div className="text-right  w-full col-span-7 md:col-span-1"><a href={event.node.link} target="_blank" className="block text-center w-full  bg-pink-600 text-white px-6 font-bold py-3 hover:no-underline font-unica uppercase hover:bg-pink-700 hover:text-white">Details</a></div>
-            </div>
-          })
-        }
-
-
-      </div>
-     </div>
+     
      <form action="https://facebook.us13.list-manage.com/subscribe/post?u=d507655cd23e7659ab174e227&id=10dc7ca21c" method="post" target="_blank">
      <div className="bg-pink-600">
       <div className="container mx-auto pt-10">
