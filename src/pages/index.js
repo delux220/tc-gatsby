@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useState} from "react";
 import { graphql, useStaticQuery } from "gatsby";
 import Layout from "../components/layout";
 import { GatsbyImage } from "gatsby-plugin-image";
@@ -14,9 +14,15 @@ const IndexPage = () => {
 
   const [noEvents, setNoEvents] = React.useState(false);
 
+  const [topEvents, setTopEvents] = useState([]);
+
   React.useEffect(() => {
 
     var found = false;
+
+    var count = 0;
+
+    var _topEvents = [];
 
 
     for(var i = 0; i < data.allStrapiEvent.edges.length; i++) {
@@ -26,7 +32,12 @@ const IndexPage = () => {
 
 
         found = true;
-        break;
+
+        if (_topEvents.length < 3) {
+          _topEvents.push(data.allStrapiEvent.edges[i].node);
+        } else {
+          break;
+        }
       }
       
     }
@@ -35,15 +46,18 @@ const IndexPage = () => {
       setNoEvents(true);
     }
 
+    setTopEvents(_topEvents);
+
     
 
     
 
   }, []);
 
+
   return (
     <Layout seo={data.strapiHomepage.seo} helloBar={1}>
-      <div className="md:h-[90vh] md:min-h-[600px] lg:min-h-[720px] relative">
+      <div className="md:min-h-[600px] lg:min-h-[720px] relative">
       <div className="md:block container h-full mx-auto md:grid grid-cols-7 md:h-[80%] md:pt-10">
         <div className="text-center col-span-3 md:flex items-center h-[50%] md:h-auto">
           <div className="md:h-auto flex justify-between flex-col overflow-hidden bg-[url(https://res.cloudinary.com/meshed-nyc/w_800,c_fill,q_auto/tracey_ai_hi_res_bc8fc1253f_5d37608e22_4b86c8f1aa_ghetjy.jpg)] h-[50vh] md:bg-none bg-contain bg-no-repeat bg-bottom">
@@ -71,32 +85,48 @@ const IndexPage = () => {
                 <img src="/_youtube.png" className="w-5 mx-auto"/>
               </a>
             </div>
-            <a href="#events"  className="w-full md:w-64 text-2xl md:text-2xl flex items-center justify-center space-x-2 md:block text-center mx-auto md:hover:text-black md:hover:bg-white hover:no-underline hover:text-white bg-transparent md:bg-pink-600 text-pink-400 md:text-white px-6 font-bold py-4 md:py-3 font-unica uppercase"><ArrowRightIcon className="w-5 h-5 md:hidden"/><span>Upcoming Shows</span></a>
+            
             </div>
           </div>
         </div>
         <div className="md:flex items-center col-span-4 relative">
         <div>
-        <a href="#podcasts" className="md:hidden font-unica z-10 text-white hover:no-underline  hover:text-black text-2xl bg-pink-600 px-4 py-3 block text-center">CHECK OUT MY PODCASTS</a>
-        <a href="#podcasts" className="grid  grid-cols-3 sm:grid-cols-2 lg:grid-cols-3 sm:gap-1">
-          {
-            data.allStrapiPodcasts.edges.map((podcast, i) => <div className="" key={`podcast-${i}`}>
-                <GatsbyImage image={podcast.node.Artwork.localFile.childImageSharp.gatsbyImageData} className="max-w-full"/>
+        
+       
+        <div className="container mx-auto px-4 pt-10 md:pt-0">
+          <h3 className="text-center sm:text-left font-unica text-5xl md:text-4xl lg:text-6xl  uppercase text-white">Upcoming Shows</h3>
+          <hr className="my-10 border-t-4 border-b-0 border-white w-12"/>
+        {
+          topEvents.map((event, i) => {
+
+
+            return <div className="grid grid-cols-4 xl:grid-cols-7 gap-1 md:gap-8 mb-5 pb-5 md:border-0" key={`top-event-${event.id}`}>
+              <div className="sm:col-span-2 lg:col-span-1 xl:col-span-2 lg:col-span-2">
+              <span className="pt-0 text-white font-unica uppercase block text-3xl font-bold mb-0 sm:hidden tracking-widest">{moment(event.startDate).format('ddd')}&nbsp;</span>
+                <span className="text-white text-xl sm:text-6xl md:text-4xl lg:text-6xl font-unica uppercase block mb-0 mt-0 font-bold"><span className="hidden sm:inline font-bold">{moment(event.startDate).format('ddd')}&nbsp;</span>{moment(event.startDate).format('MMM D')}</span>
                 
-              </div>)
-          }
+                <span className="hidden text-gray-100 font-unica text-xl  font-bold block">{moment(event.startDate).tz('America/New_York').format('h:mm a')} {}</span>
+                
+              </div>
+              <div className="sm:col-span-2 col-span-3 md:col-span-2 lg:col-span-2 xl:col-span-4">
+                <span className="pt-0 text-white font-unica uppercase block text-4xl sm:text-5xl md:text-4xl lg:text-6xl mb-0 block">{event.title}</span>
+                <span className="text-gray-400 block mb-1">{event.venueName} @ {moment(event.startDate).tz('America/New_York').format('h:mm a')}</span>
+              
+
+              </div>
+              <div className="mt-8 md:mt-0 col-span-4 xl:col-span-1 md:flex items-center justify-end">
+                <a href={event.link} className="block w-full text-center xl:w-auto xl:inline-block border-white text-white border px-4 py-2 -mt-5 no-underline hover:text-rose-500 hover:border-rose-500 hover:no-underline uppercase text-sm tracking-wide">Tickets</a>
+              </div>
+            </div>
+          })
+        }
+        <a href="/shows"  className="text-2xl md:text-2xl flex items-center space-x-2 hover:text-white no-underline text-center text-rose-500 py-4 md:py-3 font-unica uppercase"><ArrowRightIcon className="w-5 h-5"/><span>See More Shows</span></a>
 
 
-        </a>
-        <a href="#podcasts" className="hidden font-unica z-10 text-white hover:no-underline  hover:text-black text-2xl bg-pink-600 px-4 py-3 md:block text-center">CHECK OUT MY PODCASTS</a>
         </div>
         </div>
         
       </div>
-      <div className="w-full absolute left-0 bottom-0 hidden md:block">
-        
-          <ChevronDownIcon className="w-8 h-8 text-white animate-bounce block mx-auto"/>
-        
       </div>
       </div>
       <div className="container md:flex px-6 pt-4 mx-auto lg:h-128 mb-12 ">
@@ -134,59 +164,7 @@ const IndexPage = () => {
         </div>
           
       </div>
-      
-      <div className="bg-black" id="events">
-      <div className="container mx-auto pb-20 px-5 md:px-0">
-        <div className="text-center">
-          <h3 className="font-unica text-4xl  uppercase text-white mb-20">Upcoming Shows</h3>
-          {noEvents==false?<p className="text-gray-400 mb-20 font-sans hidden">Here are some upcoming shows.</p>:<p className="text-gray-400 mb-20 font-sans">Nothing right now. Stay tuned for upcoming shows!</p>}
-        </div>
-        {
-          data.allStrapiEvent.edges.map((event, i) => {
 
-            if (moment().unix() > (moment(event.node.startDate).add(1, 'day').unix() )) {
-              return <div/>;
-            }
-
-
-            return <div className="grid grid-cols-7 md:grid-cols-4 xl:grid-cols-7 gap-1 md:gap-4 mb-5 pb-5 md:border-0" key={`event-${event.id}`}>
-              <div className="col-span-2 md:col-span-1 xl:col-span-2">
-              <span className="pt-0 text-white font-unica uppercase block text-3xl font-bold mb-0 sm:hidden tracking-widest">{moment(event.node.startDate).format('ddd')}&nbsp;</span>
-                <span className="text-white text-xl sm:text-6xl font-unica uppercase block mb-0 mt-0 font-bold"><span className="hidden sm:inline font-bold">{moment(event.node.startDate).format('ddd')}&nbsp;</span>{moment(event.node.startDate).format('MMM D')}</span>
-                
-                <span className="hidden text-gray-100 font-unica text-xl  font-bold block">{moment(event.node.startDate).tz('America/New_York').format('h:mm a')} {}</span>
-                
-              </div>
-              <div className="pl-4 sm:pl-0 col-span-5 md:col-span-2 xl:col-span-4">
-                <span className="pt-0 text-white font-unica uppercase block text-xl sm:text-4xl  mb-0 block">{event.node.title}</span>
-                <span className="text-gray-400 block mb-1">{event.node.venueName} @ {moment(event.node.startDate).tz('America/New_York').format('h:mm a')}</span>
-                <span className="text-gray-400 block hidden">{event.node.venueAddress}</span>
-
-              </div>
-              <div className="text-right  w-full col-span-7 md:col-span-1"><a href={event.node.link} target="_blank" className="block text-center w-full  bg-pink-600 text-white px-6 font-bold py-3 hover:no-underline font-unica uppercase hover:bg-pink-700 hover:text-white">Details</a></div>
-            </div>
-          })
-        }
-
-
-      </div>
-     </div>
-      
-      <div className="bg-black hidden">
-      <div className="container mx-auto text-center py-10 px-5 bg-black rounded-lg">
-        <h3 className="font-sans font-bold text-white">Support Trash Talk on Patreon</h3>
-      </div>
-      </div>
-      <div className=" bg-black text-center">
- <a className="" href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" ><img src="https://res.cloudinary.com/meshed-nyc/image/upload/v1638289372/197231817_159683919470988_150262458118792007_n_w1remy.png" className="max-w-full mx-auto"/></a>
-      </div>
-      <div className="bg-black mb-10 md:mb-32">
-      <div className="container mx-auto text-center py-10 px-5 bg-black rounded-lg">
-        <p className="text-purple-300 mb-10 font-sans">Please join our Patreon for Trash Talk bonus content.</p>
-        <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="block md:inline bg-white text-black px-6 font-bold py-3 text-lg  font-unica uppercase hover:text-white hover:bg-purple-600 hover:no-underline">Join Patreon</a>
-      </div>
-      </div>
-      
       <div className=" bg-black pt-20" id="podcasts">
       <div className="container mx-auto pb-0">
 
@@ -213,6 +191,23 @@ const IndexPage = () => {
         </div>
 
       </div>
+      
+      <div className="bg-black hidden">
+      <div className="container mx-auto text-center py-10 px-5 bg-black rounded-lg">
+        <h3 className="font-sans font-bold text-white">Support Trash Talk on Patreon</h3>
+      </div>
+      </div>
+      <div className=" bg-black text-center">
+ <a className="" href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" ><img src="https://res.cloudinary.com/meshed-nyc/image/upload/v1638289372/197231817_159683919470988_150262458118792007_n_w1remy.png" className="max-w-full mx-auto"/></a>
+      </div>
+      <div className="bg-black mb-10 md:mb-32">
+      <div className="container mx-auto text-center py-10 px-5 bg-black rounded-lg">
+        <p className="text-purple-300 mb-10 font-sans">Please join our Patreon for Trash Talk bonus content.</p>
+        <a href={`https://www.patreon.com/TrashTalkPodcast`} target="_blank" className="block md:inline bg-white text-black px-6 font-bold py-3 text-lg  font-unica uppercase hover:text-white hover:bg-purple-600 hover:no-underline">Join Patreon</a>
+      </div>
+      </div>
+      
+      
       <div className="bg-gray-900 hidden">
       <div className="container mx-auto text-center py-20">
         <h3 className="font-sans font-bold text-white">Join the Trash Talk Facebook Group</h3>

@@ -35,7 +35,7 @@ const Nav = () => {
               <Link to={'/about'} className="tracking-wide ml-4 font-thin hidden md:inline text-white font-unica  text-2xl hover:no-underline hover:text-pink-500 uppercase">About</Link>
               <Link to={'/#podcasts'} className="ml-4 font-thin hidden md:inline text-white font-unica  text-2xl hover:no-underline hover:text-pink-500 uppercase">Podcasts</Link>
               
-              <Link to={'/#events'} className="ml-4 font-thin hidden md:inline text-white font-unica  text-2xl hover:no-underline hover:text-pink-500 uppercase">Shows</Link>
+              <Link to={'/shows'} className="ml-4 font-thin hidden md:inline text-white font-unica  text-2xl hover:no-underline hover:text-pink-500 uppercase">Shows</Link>
               
               <Link to={'/merch'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-unica  text-2xl hover:no-underline hover:text-pink-500">Merch</Link>
               <Link to={'/contact'} className="tracking-wide font-thin uppercase hidden md:inline text-white ml-4 font-unica  text-2xl hover:no-underline hover:text-pink-500">Contact</Link>
@@ -72,7 +72,7 @@ const Nav = () => {
                   </Link>
                 </li>
                 <li className=" my-10">
-                  <Link to={`/#events`} className="text-2xl uppercase font-unica font-bold text-white hover:text-gray-500 hover:no-underline" onClick={() => setMenuOpen(false)}>
+                  <Link to={`/shows`} className="text-2xl uppercase font-unica font-bold text-white hover:text-gray-500 hover:no-underline" onClick={() => setMenuOpen(false)}>
                     Shows
                   </Link>
                 </li>
