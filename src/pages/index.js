@@ -103,7 +103,7 @@ const IndexPage = () => {
             return <div className="grid grid-cols-4 xl:grid-cols-7 gap-1 md:gap-8 mb-5 pb-5 md:border-0" key={`top-event-${event.id}`}>
               <div className="sm:col-span-2 lg:col-span-1 xl:col-span-2 lg:col-span-2">
               <span className="pt-0 text-white font-unica uppercase block text-3xl font-bold mb-0 sm:hidden tracking-widest">{moment(event.startDate).format('ddd')}&nbsp;</span>
-                <span className="text-white text-xl sm:text-6xl md:text-4xl lg:text-6xl font-unica uppercase block mb-0 mt-0 font-bold"><span className="hidden sm:inline font-bold">{moment(event.startDate).format('ddd')}&nbsp;</span>{moment(event.startDate).format('MMM D')}</span>
+                <span className="text-white text-xl sm:text-6xl md:text-4xl lg:text-6xl xl:text-5xl xl:mt-2 2xl:rotate-0 2xl:mt-0 2xl:text-6xl font-unica uppercase block mb-0 mt-0 font-bold"><span className="hidden sm:inline font-bold">{moment(event.startDate).format('ddd')}&nbsp;</span>{moment(event.startDate).format('MMM D')}</span>
                 
                 <span className="hidden text-gray-100 font-unica text-xl  font-bold block">{moment(event.startDate).tz('America/New_York').format('h:mm a')} {}</span>
                 
